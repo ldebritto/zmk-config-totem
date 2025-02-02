@@ -25,7 +25,10 @@
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT SQT CARET TILDE GRAVE SLASH MINUS>; }; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on ^`~" keys. 
+&caps_word { 
+    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s
+    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH MINUS>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
+    }; 
 
 &mt { flavor = "balanced"; };
 
@@ -272,7 +275,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog MOU>
+                = <&macro_tap &to DEF>
                 , <&macro_tap &kp F19>
                 ;
         };
@@ -293,7 +296,7 @@
         DEF {
             bindings = <
            &ltl MOU Q     &kp W         &kp E         &kp R         &kp T               &kp Y           &kp U         &kp I          &kp O         &kp P
-           &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPER G       &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+           &hrml LCTRL A  &hrml LALT S  &hrml RSHFT D &hrml LGUI F  &hrml HYPER G       &hrmr HYPER H   &hrmr RGUI J  &hrmr RSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &ltl MOU F19 &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V    &kp B               &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &num_word NUM
                                         &lc NAV         &lc NAV       &kp RSHFT           &kp SPACE       &lc SYM       &lc SYM
             >;
@@ -303,7 +306,7 @@
             bindings = <
         &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)  &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
         &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI     &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&tog MOU &hrml GLOBE LG(Z) &kp LG(X) &kp LG(C)        &kp LG(V)    &kp F18      &playnp         &mouseless      &vb_dn          &vb_up          &kp DEL   &tog MOU
+&tog MOU &hrml GLOBE LG(Z) &kp LG(X) &kp LG(C)        &kp LG(V)    &kp F18      &playnp         &mouseless      &vb_dn          &vb_up          &kp DEL   &to DEF
                                      &tog MOU         &mnav        &tog MOU     &mkp LCLK       &mkp MCLK       &mkp RCLK
             >;          
         };
