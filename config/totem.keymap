@@ -85,7 +85,7 @@
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_edits {
-            key-positions = <30 31>;
+            key-positions = <22 23 24>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
@@ -326,7 +326,7 @@
         &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB)       &kp LG(RBKT)  &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI          &kp LG(LBKT)  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &none   &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &mt HP(V) LG(V)   &kp F18       &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &none
-                                     &none            &trans            &trans        &trans     &trans    &none
+                                     &none            &trans            &kp SPACE     &trans     &trans    &none
             >;
         };
 
