@@ -349,28 +349,28 @@
 
         AOE {
             bindings = <
-        &kp Q        &kp W       &kp E        &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-        &mt LCTRL A  &mt LALT S  &mt LSHFT D  &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-        &kp Z        &kp X       &kp C        &kp V        &lt ABS B    &trans  &trans  &trans  &trans  &trans
-                                                &lt AGS H    &lt ABS DOT  &trans  &trans
+        &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
+        &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
+&kp F3  &kp Z        &kp X      &kp C       &kp V        &lt ABS B    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans      &lt AGS H    &lt ABS DOT  &trans  &trans  &trans
             >;
         };
 
         AGS {
             bindings = <
-        &kp N1        &kp N2       &kp N3        &kp N4        &kp DEL    &trans  &trans  &trans  &trans  &kp BSPC
-        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8  &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans  &kp ENTER
-        &kp COMMA     &kp DOT      &kp BSPC      &kp HOME      &mo ABS     &trans  &trans  &trans  &trans  &kp F3
-                                                &trans        &kp SPACE  &trans  &trans
+        &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans  &trans  &trans  &trans &kp BSPC
+        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans &kp ENTER
+&kp F3  &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &trans  &trans &kp F3   &trans
+                                   &none        &trans        &kp SPACE  &trans  &trans
             >;
         };
 
         ABS {
             bindings = <
-        &kp LC(LS(M))  &kp LC(LS(S))  &kp LC(LS(U))  &kp LC(LS(Y))  &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-        &kp LC(LS(A))  &kp LC(LS(L))  &kp LC(LS(B))  &kp LC(LS(K))  &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-        &kp LC(LS(Z))  &kp LC(LS(I))  &kp LC(LS(G))  &kp LC(LS(V))  &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans
-                                                &kp LC(LS(H))  &trans           &trans  &trans
+        &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+        &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+&kp F3  &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &trans
+                                        &trans          &kp LC(LS(H))   &trans           &trans  &trans
             >;
         };
 
