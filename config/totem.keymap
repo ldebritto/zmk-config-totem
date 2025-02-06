@@ -85,10 +85,17 @@
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_edits {
-            key-positions = <22 23 24>;
+            key-positions = <12 33>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
+        };
+        
+        toggle_mou_for_extended_edits {
+            key-positions = <22 23 24>;
+            bindings = <&tog MOU>;
+            require-prior-idle-ms = <200>;
+            layers = <DEF MOU>;
         };
         
         sticky_sym_layer_for_one_handed_activation {
