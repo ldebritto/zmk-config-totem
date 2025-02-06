@@ -70,7 +70,7 @@
         
         left_hand_delete {
             bindings = <&kp DEL>;
-            key-positions = <21 23>;
+            key-positions = <22 24>;
             require-prior-idle-ms = <200>;
         };
 
