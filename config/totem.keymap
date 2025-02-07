@@ -264,7 +264,7 @@
             tapping-term-ms = <200>;
         };
 
-        nw_lc: num_word_on_tap_lc_on_hod_tog_num_on_double_tap {
+        nw_lc: nwlc_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
