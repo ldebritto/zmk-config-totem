@@ -257,7 +257,7 @@
 
         nwlc: num_word_on_tap_layer_cancel_on_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTL";
+            label = "NWLC";
             bindings = <&lc>, <&num_word>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
