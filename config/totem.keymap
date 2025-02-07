@@ -34,8 +34,7 @@
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT>;
-  ignore-modifiers;
+  continue-list = <COLON KP_DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
 };
 
 // Totem keypositions
@@ -111,9 +110,15 @@
             layers = <DEF SYM>;
         };
         
-        toggle_num {
+        toggle_num_word {
             key-positions = <17 36>;
-            bindings = <&tog NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+        
+        toggle_numpad {
+            key-positions = <27 28 29>;
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF MOU NUM>;
         };
 
@@ -255,24 +260,6 @@
             require-prior-idle-ms = <175>;
         };
 
-        nwlc: num_word_on_tap_layer_cancel_on_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NWLC";
-            bindings = <&lc>, <&num_word>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-        };
-
-        nw_lc: nwlc_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings =
-                <&nwlc SYM NUM>,
-                <&tog NUM>;
-        };
-
     };
 
     macros {
@@ -330,7 +317,7 @@
              &ltl MOU Q     &kp W         &kp E         &kp R         &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
              &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPER G &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &ltl MOU DEL &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V    &kp B         &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp RET
-                                          &kp ESC       &lc NAV       &kp RSHFT     &kp SPACE       &nw_lc        &kp TAB
+                                          &kp ESC       &lc NAV       &kp RSHFT     &kp SPACE       &lc SYM       &kp TAB
             >;
         };
 
@@ -346,9 +333,9 @@
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
             bindings = <
         &trans &trans &trans    &trans  &trans        &kp PLUS   &kp N7     &kp N8  &kp N9  &kp ASTRK
-        &trans &trans &trans    &trans  &trans        &kp MINUS  &kp N4     &kp N5  &kp N6  &kp SLASH
+        &trans &trans &trans    &trans  &trans        &hrmr HYPER MINUS  &hrmr RGUI N4     &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
 &none   &trans &trans &trans    &trans  &trans        &kp COMMA  &kp N1     &kp N2  &kp N3  &kp KP_DOT &kp EQUAL
-                      &none     &lc NAV &to DEF       &kp SPACE  &lt SYM N0 &kp TAB
+                      &to DEF   &mnav   &to DEF       &lt NAV SPACE  &lt SYM N0 &kp TAB
             >;
         };
 
