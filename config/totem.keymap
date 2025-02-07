@@ -264,6 +264,15 @@
             tapping-term-ms = <200>;
         };
 
+        nw_lc: nwlc_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings =
+                <&nwlc SYM NUM>,
+                <&tog NUM>;
+        };
+
     };
 
     macros {
@@ -318,10 +327,10 @@
                 
         DEF {
             bindings = <
-             &ltl MOU Q     &kp W         &kp E         &kp R         &kp T         &kp Y           &kp U          &kp I          &kp O         &kp P
-             &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPER G &hrmr HYPER H   &hrmr RGUI J   &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&ltl MOU DEL &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V    &kp B         &kp N           &kp M          &kp COMMA      &kp DOT       &kp SEMI        &kp RET
-                                          &kp ESC       &lc NAV       &kp RSHFT     &kp SPACE       &nwlc NUM SYM &kp TAB
+             &ltl MOU Q     &kp W         &kp E         &kp R         &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
+             &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPER G &hrmr HYPER H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&ltl MOU DEL &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V    &kp B         &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp RET
+                                          &kp ESC       &lc NAV       &kp RSHFT     &kp SPACE       &nw_lc        &kp TAB
             >;
         };
 
