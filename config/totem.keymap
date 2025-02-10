@@ -75,6 +75,12 @@
 
         // Right hand sibblings for ENTER and BACKSPACE to make them more usable with NUM and from DEF
 
+        right_hand_tab {
+            bindings = <&kp TAB>;
+            key-positions = <6 8>;
+            require-prior-idle-ms = <200>;
+        };
+
         right_hand_enter { // Feels more natural to press ENTER with the right hand
             bindings = <&hrmr RA(LS(RGUI)) ENTER>;
             key-positions = <16 17 18>;
@@ -316,7 +322,7 @@
         DEF {
             bindings = <
       &ltl MOU Q     &kp W         &kp E         &kp R         &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
-      &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPR G &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &sdqt
+      &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F  &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &sdqt
 &none &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V    &kp B         &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
                                    &none         &lc NAV       &kp RSHFT     &kp SPACE       &lc SYM       &none
             >;
@@ -334,7 +340,7 @@
         NUM { // keypad is almost mirrored to allow for use with and without a mouse
             bindings = <
       &trans &trans &trans &trans &trans  &kp PLUS          &kp N7          &kp N8          &kp N9         &kp ASTRK
-      &trans &trans &trans &trans &trans  &hrmr HYPR MINUS &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
+      &trans &trans &trans &trans &trans  &hrmr HYPR MINUS  &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
 &none &trans &trans &trans &trans &trans  &kp COMMA         &kp N1          &kp N2          &kp N3         &kp KP_DOT           &kp EQUAL
                     &none  &mnav  &trans  &lt NAV SPACE     &lt SYM N0      &none
             >;
