@@ -7,11 +7,11 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
-#define MOU 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define MOU 5
 #define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
 #define AGS 7
 #define ABS 8
@@ -319,16 +319,7 @@
             >;
         };
 
-        MOU {
-            bindings = <
-      &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)       &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-      &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI          &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&none &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &mt HP(V) LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL   &to DEF
-                                   &none            &mnav             &kp SPACE    &mkp LCLK       &mkp RCLK       &none
-            >;          
-        };
-
-        NUM { // keypad is almost mirrored to allow for use with and without a mouse
+        NUM {
             bindings = <
       &trans &trans &trans &trans &trans  &kp PLUS          &kp N7          &kp N8          &kp N9         &kp ASTRK
       &trans &trans &trans &trans &trans  &hrmr HYPR MINUS  &hrmr RGUI N4   &hrmr RSHFT N5  &hrmr RALT N6  &hrmr RCTRL SLASH
@@ -362,6 +353,15 @@
 &trans  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6    &kp F7    &kp F8     &kp F9    &kp F10   &trans
                              &none      &trans    &kp C_POWER   &kp CAPS  &trans    &none
             >;
+        };
+
+        MOU {
+            bindings = <
+      &kp TAB           &kp LC(UP) &kp LS(LC(TAB))  &kp LC(TAB)       &kp LG(RBKT) &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+      &kp LCTRL         &kp LALT   &kp LSHFT        &kp LGUI          &kp LG(LBKT) &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&none &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &mt HP(V) LG(V)   &kp F18      &playnp         &mkp MCLK       &vb_dn          &vb_up          &kp DEL   &to DEF
+                                   &none            &trans            &kp SPACE    &mkp LCLK       &mkp RCLK       &none
+            >;          
         };
 
         AOE {
