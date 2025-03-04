@@ -97,14 +97,14 @@
         // Layer toggles and other gimmickry
 
         toggle_nav_for_extended_keyboard_editing {
-            key-positions = <12 33>;
+            key-positions = <22 23 24>;
             bindings = <&tog NAV>;
             require-prior-idle-ms = <200>;
             layers = <DEF NAV>;
         };
         
         toggle_mou_for_extended_mouse_editing_with_the_right_hand {
-            key-positions = <22 23 24>;
+            key-positions = <21 22 23>;
             bindings = <&tog MOU>;
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
@@ -119,6 +119,12 @@
         
         toggle_num_word {
             key-positions = <17 36>;
+            bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+        
+        left_toggle_num_word {
+            key-positions = <12 33>;
             bindings = <&num_word NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF MOU NUM>;
         };
@@ -326,10 +332,10 @@
 
         NUM {
             bindings = <
-        &trans &trans &trans &trans &trans  &kp MINUS        &kp N7        &kp N8         kp N9         &kp SLASH
-        &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 hrmr RALT N6  &hrmr RCTRL DOT
-&trans  &trans &trans &trans &trans &trans  &kp PLUS         &kp N1        &kp N2         kp N3         &kp ASTRK           &kp EQUAL
-                     &trans  &trans &trans  &lt NAV SPACE    &lt SYM N0    &kp CANCEL
+        &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &kp MINUS        &kp N7        &kp N8         kp N9         &kp SLASH
+        &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 hrmr RALT N6  &hrmr RCTRL DOT
+&trans  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &kp PLUS         &kp N1        &kp N2         kp N3         &kp ASTRK           &kp EQUAL
+                                        &kp N0         &lt NAV N0     &lt SYM K_CANCEL &lt NAV SPACE    &lt SYM N0    &kp N0
             >;
         };
 
