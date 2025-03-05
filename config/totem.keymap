@@ -334,7 +334,7 @@
         NUM {
             bindings = <
         &trans &trans &trans &trans &trans  &kp MINUS        &kp N7        &kp N8         &kp N9         &kp SLASH
-        &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL DOT
+        &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL KP_DOT
 &trans  &trans &trans &trans &trans &trans  &kp PLUS         &kp N1        &kp N2         &kp N3         &kp ASTRK           &kp EQUAL
                       &trans &trans &trans  &lt NAV SPACE    &lt SYM N0    &kp N0
             >;
@@ -360,10 +360,10 @@
 
         NUM_L { // Left hand numpad for mouse usage with right hand
             bindings = <
-        &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH        &trans &trans &trans &trans &trans 
-        &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT   &trans &trans &trans &trans &trans 
-&trans  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK        &trans &trans &trans &trans &trans &trans 
-                                        &kp N0         &lt MOU N0     &lt SYM N0       &trans &trans &trans
+        &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH         &trans &trans &trans &trans &trans 
+        &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR KP_DOT &trans &trans &trans &trans &trans 
+&trans  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK         &trans &trans &trans &trans &trans &trans 
+                                        &kp N0         &lt MOU N0     &lt SYM N0        &trans &trans &trans
             >;
         };
 
