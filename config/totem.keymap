@@ -8,13 +8,9 @@
 #define DEF 0
 #define NUM 1 // must be bellow NAV and SYM to allow to fetch symbols and using arrows
 #define NAV 2 // must be bellow MOU for input_processor to work
-#define MOU 3 // must be bellow NUM_L for &num_word NUM_L to work
-#define NUM_L 4 // for left hand numpad with mouse usage
-#define SYM 5
-#define FUN 6
-#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 8
-#define ABS 9
+#define MOU 3 
+#define SYM 4
+#define FUN 5
 
 #include "mouse.dtsi" // Requires layer defines
 
@@ -39,7 +35,7 @@
   continue-list = <COLON DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR PRCNT BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
 };
 
-// Totem keypositions
+// Totem key positions for combos
 //      0       1       2       3       4                       5       6       7       8       9
 //      10      11      12      13      14                      15      16      17      18      19
 // 20   21      22      23      24      25                      26      27      28      29      30      31
@@ -69,12 +65,6 @@
             require-prior-idle-ms = <200>;
         };
         
-        left_hand_delete {
-            bindings = <&kp DEL>;
-            key-positions = <22 24>;
-            require-prior-idle-ms = <200>;
-        };
-
         // Right hand sibblings for ENTER and BACKSPACE to make them more usable with NUM and from DEF
 
         right_hand_tab {
@@ -124,12 +114,6 @@
             layers = <DEF MOU NUM>;
         };
         
-        left_toggle_num_word {
-            key-positions = <12 33>;
-            bindings = <&num_word NUM_L>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM_L>;
-        };
-        
         toggle_numpad {
             key-positions = <27 28 29>;
             bindings = <&tc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
@@ -146,13 +130,6 @@
             key-positions = <12 17>;
             bindings = <&caps_word>;
             layers = <DEF>;
-            require-prior-idle-ms = <200>;
-        };
-
-        toggle_aoe_gaming_layer {
-            key-positions = <21 22 23>;
-            bindings = <&tc AOE>;
-            layers = <NAV AGS>;
             require-prior-idle-ms = <200>;
         };
 
@@ -288,6 +265,7 @@
     };
 
     macros {
+
         lc: mo_layer_switch_with_an_embeded_cancel_tap_for_clearing_any_queued_sticky_mods_on_layer_activation {
             compatible = "zmk,behavior-macro-one-param";
             label = "mo_layer/cancel";
@@ -329,8 +307,8 @@
         };
     };
 
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
                 
         DEF {
             bindings = <
@@ -346,7 +324,7 @@
         &trans &trans &trans &trans &trans  &kp MINUS        &kp N7        &kp N8         &kp N9         &kp SLASH
         &trans &trans &trans &trans &trans  &hrmr HYPR COMMA &hrmr RGUI N4 &hrmr RSHFT N5 &hrmr RALT N6  &hrmr RCTRL DOT
 &trans  &trans &trans &trans &trans &trans  &kp PLUS         &kp N1        &kp N2         &kp N3         &kp ASTRK           &kp EQUAL
-                      &trans &trans &trans  &lt NAV SPACE    &lt SYM N0    &kp N0
+                      &trans &trans &trans  &lt NAV SPACE    &lt SYM N0    &trans
             >;
         };
 
@@ -368,16 +346,6 @@
             >;          
         };
 
-        NUM_L { // Left hand numpad for mouse usage with right hand
-            bindings = <
-        &kp MINUS         &kp N7        &kp N8         &kp N9         &kp SLASH         &trans &trans &trans &trans &trans 
-        &hrmr RCTRL COMMA &hrmr RALT N4 &hrmr RSHFT N5 &hrmr RGUI N6  &hrmr HYPR DOT &trans &trans &trans &trans &trans 
-&trans  &kp PLUS          &kp N1        &kp N2         &kp N3         &kp ASTRK         &trans &trans &trans &trans &trans &trans 
-                                        &kp N0         &lt SYM N0     &lt SYM N0        &trans &trans &trans
-            >;
-        };
-
-
         SYM {
             bindings = <
         &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT         &kp AMPS  &kp RPAR &kp RBKT  &kp RBRC &kp DQT
@@ -395,33 +363,5 @@
                              &none      &trans    &kp C_POWER   &kp CAPS  &trans    &none
             >;
         };
-
-        AOE {
-            bindings = <
-        &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
-        &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-&none   &kp Z        &kp X      &kp C       &kp V        &lt ABS B    &trans  &trans  &trans  &trans  &trans  &none
-                                &none       &lt AGS H    &lt ABS DOT  &trans  &trans  &none
-            >;
-        };
-
-        AGS {
-            bindings = <
-        &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans  &trans  &trans  &trans &kp BSPC
-        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans &kp ENTER
-&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &vb_dn  &vb_up &kp F3   &none
-                                   &none        &trans        &kp SPACE  &trans  &trans  &none
-            >;
-        };
-
-        ABS {
-            bindings = <
-        &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
-        &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
-&none   &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &none
-                                        &none           &kp LC(LS(H))   &trans           &trans  &trans  &none
-            >;
-        };
-
-        };
+    };
 };
