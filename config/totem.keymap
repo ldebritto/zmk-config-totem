@@ -100,6 +100,12 @@
             layers = <DEF MOU>;
         };
         
+        toggle_mouse_emulation_layer_with_the_right_hand {
+            key-positions = <6 7 8>;
+            bindings = <&tc MOU>;
+            layers = <DEF MOU>;
+        };
+        
         sticky_sym_layer_for_one_handed_activation {
             key-positions = <35 36>;
             bindings = <&sl SYM>; // usually just one symbol is used, so a &sl is better than &tog
@@ -117,12 +123,6 @@
             key-positions = <27 28 29>;
             bindings = <&tc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
             layers = <DEF NUM>;
-        };
-
-        toggle_mouse_emulation_layer {
-            key-positions = <6 7 8>;
-            bindings = <&tc MOU>;
-            layers = <DEF MOU>;
         };
 
         toggle_caps_word {
