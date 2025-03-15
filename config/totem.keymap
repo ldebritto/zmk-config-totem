@@ -31,7 +31,7 @@
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR PRCNT BSPC DEL TAB KP_ENTER ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
+  continue-list = <COLON DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR PRCNT BSPC DEL TAB ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
 };
 
 // Totem key positions for combos
@@ -48,7 +48,7 @@
         
         left_hand_esc { // Left hand is great to allow mouse usage simultaneously
             bindings = <&kp ESCAPE>;
-            key-positions = <1 3>;
+            key-positions = <1 2 3>;
             require-prior-idle-ms = <200>;
         };
 
@@ -68,7 +68,7 @@
 
         right_hand_tab {
             bindings = <&kp TAB>;
-            key-positions = <6 8>;
+            key-positions = <6 7 8>;
             require-prior-idle-ms = <200>;
         };
 
@@ -94,14 +94,14 @@
         };
         
         toggle_mou_for_extended_mouse_editing_with_the_right_hand {
-            key-positions = <1 2 3>;
+            key-positions = <21 22 23>;
             bindings = <&tc MOU>;
             require-prior-idle-ms = <200>;
             layers = <DEF MOU>;
         };
         
         toggle_mouse_emulation_layer_with_the_right_hand {
-            key-positions = <6 7 8>;
+            key-positions = <28 29 30>;
             bindings = <&tc MOU>;
             layers = <DEF MOU>;
         };
