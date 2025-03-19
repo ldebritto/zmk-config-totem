@@ -6,11 +6,12 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
-#define NUM 1 // must be bellow NAV and SYM to allow to fetch symbols and using arrows
-#define NAV 2 // must be bellow MOU for input_processor to work
-#define MOU 3 
-#define SYM 4
-#define FUN 5
+#define TMK 1 // TMK is a layer for experimenting with Tarmak gradual progression torwards Colemak (https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
+#define NUM 2 // must be bellow NAV and SYM to allow to fetch symbols and using arrows
+#define NAV 3 // must be bellow MOU for input_processor to work
+#define MOU 4 
+#define SYM 5
+#define FUN 6
 
 #include "mouse.dtsi" // Requires layer defines above
 
@@ -130,6 +131,12 @@
             bindings = <&caps_word>;
             layers = <DEF>;
             require-prior-idle-ms = <200>;
+        };
+        
+        toggle_tarmak { // Trying to learn Colemak in steps (see https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
+            key-positions = <0 9>;
+            bindings = <&tc TMK>;
+            layers = <FUN>;
         };
 
         // SYS combos to replace a dedicated SYS layer
@@ -314,6 +321,15 @@
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &kp B         &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
+                                               &ltl MOU ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
+            >;
+        };
+
+        TMK { // stage 1 of Tarmak
+            bindings = <
+                  &ltl MOU Q     &kp W         &kp J         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
+                  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
+&mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &kp B         &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
                                                &ltl MOU ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
             >;
         };
