@@ -120,6 +120,12 @@
             layers = <DEF MOU NUM>;
         };
         
+        left_hand_numpad_lc_combo {
+            key-positions = <33 34>;
+            bindings = <&lc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
+            layers = <DEF MOU NUM>;
+        };
+
         toggle_numpad {
             key-positions = <27 28 29>;
             bindings = <&tc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
