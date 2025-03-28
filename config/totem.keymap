@@ -274,6 +274,18 @@
         };
         
         #define MNAV &mlt NAV DEF
+
+        // Layer-tap to &num_word on tap and &lc SYM on hold
+        nwlc: num_word_layer_tap_cancel {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTL";
+            bindings = <&lc>, <&num_word>;
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+        };
+
+        #define NWSYM &nwlc SYM NUM
     };
 
     macros {
@@ -327,7 +339,7 @@
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
-                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
+                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       NWSYM         &num_word NUM
             >;
         };
 
@@ -362,7 +374,7 @@
             bindings = <
         &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
         &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&mkp RCLK &mt GLOBE LG(Z)          &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)             &mkp RCLK    &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+&mkp RCLK &mt GLOBE LG(Z)          &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &mkp RCLK    &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
                                                             &mkp LCLK                MNAV                  &mt RGUI SPC &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
