@@ -266,7 +266,7 @@
         // Layer-tap to escape from MOU and NUM to DEF on tap but still preserve the ability to trigger NAV on hold for input processor to work properly
         mo_to: mouse_layer_tap_cancel {
             compatible = "zmk,behavior-hold-tap";
-            label = "MTL";
+            label = "MO_TO";
             bindings = <&mo>, <&to>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -279,7 +279,7 @@
         // Layer-tap to &num_word on tap and &lc SYM on hold
         nwlc: num_word_layer_tap_cancel {
             compatible = "zmk,behavior-hold-tap";
-            label = "MTL";
+            label = "NWLC";
             bindings = <&lc>, <&num_word>;
             #binding-cells = <2>;
             flavor = "hold-preferred";
