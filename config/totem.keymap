@@ -12,6 +12,7 @@
 #define MOU 4 
 #define SYM 5
 #define FUN 6
+#define NWD 7
 
 #include "mouse.dtsi" // Requires layer defines above
 
@@ -339,7 +340,7 @@
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
-                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       NWSYM         &num_word FUN
+                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       NWSYM         &num_word NWD
             >;
         };
 
@@ -348,7 +349,7 @@
                   &ltl MOU Q     &kp W         &kp J         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
-                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
+                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NWD
             >;
         };
 
@@ -389,6 +390,15 @@
         };
 
         FUN {
+            bindings = <
+        &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
+        &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
+&trans  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6    &kp F7    &kp F8     &kp F9    &kp F10   &trans
+                             &none      &trans    &kp C_POWER   &kp CAPS  &trans    &none
+            >;
+        };
+        
+        NWD {
             bindings = <
         &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6    &kp N7    &kp N8     &kp N9    &kp N0
         &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
