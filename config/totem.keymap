@@ -274,7 +274,6 @@
         };
         
         #define MNAV &mo_to NAV DEF
-        #define NNAV &mo_to NAV DEF
 
         // Layer-tap to &num_word on tap and &lc SYM on hold
         nwlc: num_word_layer_tap_cancel {
@@ -340,7 +339,7 @@
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
-                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       NWSYM         &num_word NUM
+                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       NWSYM         &num_word FUN
             >;
         };
 
