@@ -355,7 +355,7 @@
         NUM {
             bindings = <
         &trans    &trans   &trans    &trans   &trans  &kp ASTRK &kp N7  &kp N8  &kp N9  &kp SLASH
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &trans  &kp MINUS &kp N4  &kp N5  &kp N6  &kp DOT
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &trans  &kp MINUS &kp N4  &kp N5  &kp N6  &lt SYM DOT
 &trans  &trans    &trans   &trans    &trans   &trans  &kp PLUS  &kp N1  &kp N2  &kp N3  &mt COMMA   &trans
                            &trans    MNAV     &trans  &trans    &kp N0  &trans
             >;
