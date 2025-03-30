@@ -7,11 +7,11 @@
 
 #define DEF 0
 #define TMK 1 // TMK is a layer for experimenting with Tarmak gradual progression torwards Colemak (https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
-#define NUM 2 // must be bellow NAV and SYM to allow to fetch symbols and using arrows
+#define NUM 2 // must be bellow SYM and NAV to access keys on those layers
 #define NAV 3 // must be bellow MOU for input_processor to work
-#define MOU 4 
-#define SYM 5
-#define FUN 6
+#define SYM 4
+#define FUN 5
+#define MOU 6 
 
 
 #include "mouse.dtsi" // Requires layer defines above
@@ -356,7 +356,7 @@
         NUM {
             bindings = <
         &none     &none    &none     &none    &none     &kp TAB     &kp N7      &kp N8  &kp N9  &kp SLASH
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPER &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR  &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
 &trans  &none     &none    &none     &none    &none     &kp COLON   &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
                            &trans    MNAV     &trans    &kp SPACE   &lt SYM N0  &kp ENTER
             >;
@@ -367,17 +367,8 @@
         &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &trans  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &trans
-                                     &trans           &trans      &kp SPACE       &trans     &trans    &trans
+                                     &trans           &trans      &num_word NUM   &trans     &trans    &trans
             >;
-        };
-
-        MOU {
-            bindings = <
-        &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-        &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&mkp RCLK &mt GLOBE LG(Z)          &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &mkp RCLK    &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                                            &mkp LCLK                MNAV                  &mt RGUI SPC &mkp LCLK        &mkp RCLK       &trans
-            >;          
         };
 
         SYM {
@@ -397,5 +388,14 @@
                              &none      &trans    &kp C_POWER   &kp CAPS  &trans    &none
             >;
         };
-    };
+  
+        MOU {
+            bindings = <
+        &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+        &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&mkp RCLK &mt GLOBE LG(Z)          &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &mkp RCLK    &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                                                            &mkp LCLK                MNAV                  &mt RGUI SPC &mkp LCLK        &mkp RCLK       &trans
+            >;          
+        };
+  };
 };
