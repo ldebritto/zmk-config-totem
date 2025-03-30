@@ -7,8 +7,8 @@
 
 #define DEF 0
 #define TMK 1 // TMK is a layer for experimenting with Tarmak gradual progression torwards Colemak (https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/)
-#define NUM 2 // must be bellow SYM and NAV to access keys on those layers
-#define NAV 3 // must be bellow MOU for input_processor to work
+#define NAV 2 // must be bellow MOU for input_processor to work
+#define NUM 3 // must be bellow SYM and NAV to access keys on those layers
 #define SYM 4
 #define FUN 5
 #define MOU 6 
@@ -353,21 +353,21 @@
             >;
         };
 
-        NUM {
-            bindings = <
-        &none     &none    &none     &none    &none     &kp TAB     &kp N7      &kp N8  &kp N9  &kp SLASH
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR  &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
-&trans  &none     &none    &none     &none    &none     &kp COLON   &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
-                           &trans    MNAV     &trans    &kp SPACE   &lt SYM N0  &kp ENTER
-            >;
-        };
-
         NAV {
             bindings = <
         &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &trans  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &trans
                                      &trans           &trans      &num_word NUM   &trans     &trans    &trans
+            >;
+        };
+
+        NUM {
+            bindings = <
+        &none     &none    &none     &none    &none     &kp TAB     &kp N7      &kp N8  &kp N9  &kp SLASH
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR  &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
+&trans  &none     &none    &none     &none    &none     &kp COLON   &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
+                           &trans    MNAV     &trans    &kp SPACE   &lt SYM N0  &kp ENTER
             >;
         };
 
