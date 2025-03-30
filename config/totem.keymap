@@ -339,26 +339,26 @@
             bindings = <
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
+&mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
                                                &ltl NUM ESC  &lc NAV      &kp RSHFT     &lt NAV SPACE   &lc SYM       &num_word NUM
             >;
         };
 
         TMK { // stage 1 of Tarmak
             bindings = <
-                  &ltl MOU Q     &kp W         &kp J         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
-                  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
-&mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &kp TAB
-                                               &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
+       &ltl MOU Q     &kp W         &kp J         &kp R        &kp T         &kp Y           &kp U         &kp I          &kp O         &kp P
+       &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H    &hrmr RGUI N  &hrmr LSHFT E  &hrmr RALT L  &hrmr RCTRL SQT
+&trans &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp K           &kp M         &kp COMMA      &kp DOT       &kp SEMI        &trans
+                                    &ltl NUM ESC  &lc NAV      &kp RSHFT     &kp SPACE       &lc SYM       &num_word NUM
             >;
         };
 
         NUM {
             bindings = <
-        &none     &none    &none     &none    &none     &kp TAB         &kp N7      &kp N8  &kp N9  &kp SLASH
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPER &kp MINUS       &kp N4      &kp N5  &kp N6  &kp DOT
-&trans  &none     &none    &none     &none    &none     &kp COLON       &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
-                           &trans    MNAV     &trans    &lt NAV SPACE   &lt SYM N0  &kp ENTER
+        &none     &none    &none     &none    &none     &kp TAB     &kp N7      &kp N8  &kp N9  &kp SLASH
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPER &kp MINUS   &kp N4      &kp N5  &kp N6  &kp DOT
+&trans  &none     &none    &none     &none    &none     &kp COLON   &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
+                           &trans    MNAV     &trans    &kp SPACE   &lt SYM N0  &kp ENTER
             >;
         };
 
@@ -367,7 +367,7 @@
         &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &trans  &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &trans
-                                     &none            &trans      &kp SPACE       &trans     &trans    &none
+                                     &trans           &trans      &kp SPACE       &trans     &trans    &trans
             >;
         };
 
@@ -385,7 +385,7 @@
         &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RGUI &sk LSHFT &sk RALT &sk RCTRL
 &kp LT  &kp EQUAL  &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH &kp QMARK &kp EXCL &kp COLON &kp GT
-                              &none      &lc NAV    &mt RSHFT UNDER &kp UNDER &trans   &none
+                              &trans     &lc NAV    &mt RSHFT UNDER &kp UNDER &trans   &none
             >;
         };
 
