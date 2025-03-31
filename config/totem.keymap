@@ -12,12 +12,11 @@
 #define FUN 4
 #define MOU 5 
 
-
 #include "mouse.dtsi" // Requires layer defines above
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
-// Customizing behaviors
+// Customizing base behaviors
 
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
@@ -32,7 +31,14 @@
 &mt { flavor = "balanced"; };
 
 &num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <COLON DOT COMMA PLUS MINUS ASTRK SLASH EQUAL AT DOLLAR PRCNT BSPC DEL TAB ESC LPAR RPAR LBKT RBKT LBRC RBRC LT GT LCTRL LALT LSHFT LGUI>;
+  continue-list = <
+    COLON DOT COMMA 
+    PLUS MINUS ASTRK SLASH EQUAL 
+    LPAR RPAR LBKT RBKT LBRC RBRC LT GT 
+    AT DOLLAR PRCNT 
+    BSPC DEL ESC 
+    LCTRL LALT LSHFT LGUI
+    >;
 };
 
 // Totem key positions for combos
@@ -120,12 +126,6 @@
             layers = <DEF MOU NUM>;
         };
         
-        left_hand_numpad_lc_combo {
-            key-positions = <33 34>;
-            bindings = <&lc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-            layers = <DEF MOU NUM>;
-        };
-
         toggle_numpad {
             key-positions = <27 28 29>;
             bindings = <&tc NUM>; // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
