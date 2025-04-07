@@ -139,7 +139,7 @@
             require-prior-idle-ms = <200>;
         };
         
-        // SYS combos to replace a dedicated SYS layer
+        // SYS combos from FUN replace a dedicated SYS layer
         
         sys_bootloader {
             key-positions = <21 22>;
@@ -269,17 +269,6 @@
         
         #define MNAV &mo_to NAV DEF
 
-        // Layer-tap to &num_word on tap and &lc SYM on hold
-        nwlc: num_word_layer_tap_cancel {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NWLC";
-            bindings = <&lc>, <&num_word>;
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;            
-        };
-
-        #define NWSYM &nwlc SYM NUM
     };
 
     macros {
@@ -342,7 +331,7 @@
         &none     &none    &none     &none    &none     &kp MINUS   &kp N7      &kp N8  &kp N9  &kp SLASH
         &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR  &kp N0      &kp N4      &kp N5  &kp N6  &kp DOT
 &trans  &none     &none    &none     &none    &none     &kp COLON   &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
-                           &trans    MNAV     &trans    &kp SPACE   &lt SYM N0  &kp ENTER
+                           &trans    &trans   &trans    &kp SPACE   &lt SYM N0  &kp ENTER
             >;
         };
 
@@ -351,7 +340,7 @@
                     &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
                     &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &kp LC(LA(MINUS))   &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &kp LC(LA(PLUS))
-                                     &trans           &trans      &trans          &trans     &lc SYM   &trans
+                                     &trans           &trans      &trans      &trans          &trans     &trans
             >;
         };
 
@@ -360,7 +349,7 @@
         &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RGUI &sk LSHFT &sk RALT &sk RCTRL
 &kp LT  &kp EQUAL  &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH &kp QMARK &kp EXCL &kp COLON &kp GT
-                              &trans     &lc NAV    &mt RSHFT UNDER &kp UNDER &trans   &none
+                              &trans     &trans     &mt RSHFT UNDER &kp UNDER &trans   &none
             >;
         };
 
