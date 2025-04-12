@@ -329,7 +329,7 @@
                   &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y        &kp U         &kp I          &kp O         &kp P
                   &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &mt LA(BSPC) BSPC &hrml GLOBE Z  &kp X         &ltl NUM C    &ltl NUM V   &hrml GLOBE B &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
-                                               &lc NAV       &lc NAV      &kp RSHFT     &kp SPACE    &lc SYM       &lc SYM
+                                               &none         &lc NAV      &kp RSHFT     &kp SPACE    &lc SYM       &none
             >;
         };
 
@@ -338,7 +338,7 @@
         &none     &none    &none     &none    &none     &none      &kp N7      &kp N8  &kp N9  &kp SLASH
         &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &sk HYPR  &kp MINUS  &kp N4      &kp N5  &kp N6  &kp DOT
 &trans  &none     &none    &none     &none    &none     &kp COLON  &kp N1      &kp N2  &kp N3  &kp COMMA &mt LA(BSPC) BSPC 
-                           &trans    &trans   &trans    &lt SYM N0 &kp SPACE   &lt SYM N0
+                           &trans    &trans   &trans    &trans     &lt SYM N0  &trans
             >;
         };
 
@@ -347,7 +347,7 @@
                     &kp TAB           &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
                     &sk LCTRL         &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &kp LC(LA(MINUS))   &hrml GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &kp LC(LA(PLUS))
-                                     &trans           &trans      &trans      &trans          &trans     &trans
+                                                 &trans           &trans      &trans          &trans     &trans    &trans
             >;
         };
 
@@ -356,7 +356,7 @@
         &kp ESC    &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS  &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RGUI  &sk LSHFT &sk RALT &sk RCTRL
 &kp LT  &kp EQUAL  &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &kp GT
-                              &trans     &mt RSHFT UNDER &trans     &trans    &kp UNDER &trans
+                              &trans     &trans     &mt RSHFT UNDER &kp UNDER &trans    &trans 
             >;
         };
 
@@ -365,7 +365,7 @@
         &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
         &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &kp F18 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6   &kp F7    &kp F8     &kp F9    &kp F10   &kp F19
-                             &none      &kp C_POWER &trans      &trans   &kp CAPS  &trans
+                             &none      &trans    &kp C_POWER   &kp CAPS &trans    &trans
             >;
         };
   
@@ -374,7 +374,7 @@
           &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
           &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
 &mkp LCLK &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &mkp RCLK    &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                                              MNAV                     &mt RGUI SPC          MNAV         &trans           &mkp LCLK        &mkp RCLK       
+                                                              &trans                   MNAV                  &mt RGUI SPC &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
   };
