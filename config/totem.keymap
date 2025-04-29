@@ -16,6 +16,21 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
+// NAV key defines for macOS Shortcuts
+#define P_TAB LS(LC(TAB))
+#define N_TAB LC(TAB)
+#define BACK  LG(RBKT)
+#define FWRD  LG(LBKT)
+#define UNDO  LG(Z)
+#define CUT   LG(X)
+#define COPY  LG(C)
+#define PASTE LG(V)
+#define R_SPC LC(LA(MINUS))
+#define A_SPC LC(LA(EQUAL))
+#define P_SPC LC(LEFT)
+#define N_SPC LC(RIGHT)
+#define M_CTL LC(UP)
+
 // Customizing base behaviors
 
 &sk {
@@ -107,7 +122,7 @@
                 <&kp C_PREVIOUS>;
         };
         
-        vb_up: volume_brightness_up_on_control {
+        vol_b_u: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
@@ -115,7 +130,7 @@
             mods = <(MOD_LCTL)>;
         };
 
-        vb_dn: volume_brightness_down_on_control {
+        vol_b_d: volume_brightness_down_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
@@ -259,10 +274,10 @@
 
         NAV {
             bindings = <
-                    &kp TAB         &swapper   &kp LS(LC(TAB))  &kp LC(TAB) &kp LG(RBKT)    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
-                    &sk LCTRL       &sk LALT   &sk LSHFT        &sk LGUI    &kp LG(LBKT)    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&kp LC(LA(MINUS))   &mt GLOBE LG(Z) &kp LG(X)  &kp LG(C)        &kp LG(V)   &kp F18         &playnp    &kp F19   &vb_dn    &vb_up     &kp DEL  &kp LC(LA(PLUS))
-                                                 &trans           &trans      &kp SPACE       &trans     &trans    &trans
+        &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+        &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+&trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &vol_b_d  &vol_b_u   &kp DEL  &trans
+                                    &trans      &trans      &kp SPACE   &trans     &trans    &trans
             >;
         };
 
@@ -279,17 +294,17 @@
             bindings = <
         &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
         &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
-&kp F18 &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6   &kp F7    &kp F8     &kp F9    &kp F10   &kp F19
+&trans  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6   &kp F7    &kp F8     &kp F9    &kp F10   &trans
                              &trans     &trans    &kp C_POWER   &kp CAPS &trans    &trans
             >;
         };
   
         MOU {
             bindings = <
-          &mt LC(LA(MINUS)) LC(DOWN) &mt LC(LA(EQUAL)) LC(UP) &mt LC(LEFT) LC(LS(TAB)) &mt LC(RIGHT) LC(TAB) &kp LG(RBKT)  &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-          &kp LCTRL                  &kp LALT                 &kp LSHFT                &kp LGUI              &kp LG(LBKT)  &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
-&mkp LCLK &mt GLOBE LG(Z)            &kp LG(X)                &kp LG(C)                &ltl NAV LG(V)        &kp F11       &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                                              &trans                   MNAV                  &kp SPACE     &mkp LCLK        &mkp RCLK       &trans
+        &tog MOU        &mt A_SPC M_CTL &mt P_SPC P_TAB &mt N_SPC N_TAB &mt R_SPC FWRD   &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+        &kp LCTRL       &kp LALT        &kp LSHFT       &kp LGUI        &kp BACK         &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
+&trans  &mt GLOBE UNDO  &kp CUT         &kp COPY        &kp PASTE       &kp F11          &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                                        &trans          MNAV            &kp SPACE        &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
   };
