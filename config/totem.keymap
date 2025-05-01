@@ -11,6 +11,9 @@
 #define SYM 3
 #define FUN 4
 #define MOU 5 
+#define AOE 7 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 8
+#define ABS 9
 
 #include "mouse.dtsi" // Requires layer defines above
 
@@ -104,6 +107,9 @@
         
         COMBO(sys_bootloader,       &bootloader,                21 22,    FUN,      60)
         COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,    FUN,      60)
+
+        // AOE combos for the AOE layer
+        COMBO(togle_aoe_layer,      &tog AOE,                   10 11 20, DEF AOE,  60)
 
     };
 
@@ -302,6 +308,33 @@
 &trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F11     &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
                                     &trans      MNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
             >;          
+        };
+
+        AOE {
+            bindings = <
+        &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
+        &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
+&none   &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans  &none
+                                &none       &lt AGS H    &lt ABS DOT  &trans  &trans  &none
+            >;
+        };
+
+        AGS {
+            bindings = <
+        &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans  &trans  &trans  &trans &kp BSPC
+        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans  &trans  &trans  &trans &kp ENTER
+&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &vb_dn  &vb_up &kp F3   &none
+                                   &none        &trans        &kp DEL  &trans  &trans  &none
+            >;
+        };
+
+        ABS {
+            bindings = <
+        &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
+        &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
+&none   &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &none
+                                        &none           &kp LC(LS(H))   &trans           &trans  &trans  &none
+            >;
         };
   };
 };
