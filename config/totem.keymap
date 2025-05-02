@@ -15,6 +15,8 @@
 #define AGS 7
 #define ABS 8
 
+#define BAS 0 6 // Base layers for combos and other stuff
+
 #include "mouse.dtsi" // Requires layer defines above
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
@@ -76,28 +78,28 @@
 
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF,      60)
-        COMBO(left_tab,             &kp TAB,                     1     3, DEF,      60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, BAS,      60)
+        COMBO(left_tab,             &kp TAB,                     1     3, BAS,      60)
         // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
-        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
+        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, BAS,      60)
+        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, BAS,      60)
         
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NUM,  60)
-        COMBO(right_tab,            &kp TAB,                     6     8, DEF NUM,  60)
-        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60)
-        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, DEF,      60)
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, BAS NUM,  60)
+        COMBO(right_tab,            &kp TAB,                     6     8, BAS NUM,  60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, BAS,      60)
+        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, BAS,      60)
         // non-mod variant for NUM layer
         COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60)
         COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60)
 
         // Layer toggles and other gimmickry
 
-        COMBO(tog_nav,              &tc NAV,                    25 33,    DEF NAV,  60)
-        COMBO(tog_sym,              &sl SYM,                    26 36,    DEF SYM,  60)
-        COMBO(tog_mou,              &tc MOU,                    22 23 24, DEF MOU,  60)
-        COMBO(tog_num,              &tc NUM,                    27 28 29, DEF NUM,  60)
-        COMBO(tog_num_word,         &num_word NUM,              17 36,    DEF NUM,  60)
-        COMBO(tog_caps_word,        &caps_word,                 12 17,    DEF,      60)
+        COMBO(tog_nav,              &tc NAV,                    25 33,    BAS NAV,  60)
+        COMBO(tog_sym,              &sl SYM,                    26 36,    BAS SYM,  60)
+        COMBO(tog_mou,              &tc MOU,                    22 23 24, BAS MOU,  60)
+        COMBO(tog_num,              &tc NUM,                    27 28 29, BAS NUM,  60)
+        COMBO(tog_num_word,         &num_word NUM,              17 36,    BAS NUM,  60)
+        COMBO(tog_caps_word,        &caps_word,                 12 17,    BAS,      60)
 
         // SYS combos to connect to BT devices from FUN layer
         
