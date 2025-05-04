@@ -182,7 +182,7 @@
                 <&kp C_PREVIOUS>;
         };
         
-        vol_b_u: volume_brightness_up_on_control {
+        volbriu: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
@@ -190,7 +190,7 @@
             mods = <(MOD_LCTL)>;
         };
 
-        vol_b_d: volume_brightness_down_on_control {
+        volbrid: volume_brightness_down_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
@@ -198,7 +198,7 @@
             mods = <(MOD_LCTL)>;
         };
 
- _   w_volb_u: volume_brightness_up_on_control {
+ _   wvolbriu: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
@@ -382,7 +382,7 @@
             bindings = <
         &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &vol_b_d  &vol_b_u   &kp DEL  &trans
+&trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &volbrid  &volbriu   &kp DEL  &trans
                                     &trans      &trans      &kp SPACE   &trans     &trans    &trans
             >;
         };
@@ -416,19 +416,19 @@
                 
         W_DEF {
             bindings = <
-                  &ltl MOU Q     &kp W         &kp E         &kp R        &kp T          &kp Y        &kp U         &kp I          &kp O         &kp P
+                  &ltl W_MOU Q  &kp W         &kp E         &kp R         &kp T          &kp Y        &kp U         &kp I          &kp O         &kp P
                   &hrml LGUI A  &hrml LALT S  &hrml LSHFT D &hrml LCTRL F &hrml HYPR G   &hrmr HYPR H &hrmr RCTRL J &hrmr LSHFT K  &hrmr RALT L  &hrmr RGUI SQT
-&mt LA(BSPC) BSPC &hrml GLOBE Z  &ltl NUM X    &ltl NUM C    &ltl NUM V   &kp B          &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
-                                               &none         &lc NAV      &mt RSHFT LGUI &kp SPACE    &lc SYM       &none
+&mt LC(BSPC) BSPC &kp Z         &ltl W_NUM X  &ltl W_NUM C  &ltl W_NUM V  &kp B          &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
+                                              &none         &lc W_NAV     &mt RSHFT LGUI &kp SPACE    &lc W_SYM     &none
             >;
         };
           
         W_NUM {
             bindings = <
-        &none     &none    &none     &none    &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-        &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp DOT
-&trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1      &kp N2  &kp N3  &kp SLASH &mt LA(BSPC) BSPC 
-                           &trans    &trans   &sk LCTRL &trans     &lt SYM N0  &trans
+        &none     &none    &none     &none    &none     &kp LA(N6) &kp N7       &kp N8  &kp N9  &mt LA(N9) LA(N0)
+        &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &kp MINUS  &kp N4       &kp N5  &kp N6  &kp DOT
+&trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1       &kp N2  &kp N3  &kp SLASH &mt LC(BSPC) BSPC 
+                           &trans    &trans   &sk LCTRL &trans     &lt W_SYM N0 &trans
             >;
         };
 
@@ -436,7 +436,7 @@
             bindings = <
         &kp TAB     &wswapper   &kp P_TAB   &kp N_TAB   &kp W_FWRD  &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LGUI    &sk LALT    &sk LSHFT   &sk LCTRL   &kp W_BACK  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&trans  &kp W_UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp F18     &playnp    &kp F19   &w_volb_d &w_volb_u &kp DEL  &trans
+&trans  &kp W_UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp F18     &playnp    &kp F19   &wvolbrid &wvolbriu  &kp DEL  &trans
                                 &trans      &trans      &kp SPACE   &trans     &trans    &trans
             >;
         };
@@ -461,11 +461,11 @@
   
         W_MOU {
             bindings = <
-        &tog MOU  &kp LG(TAB) &kp P_TAB   &kp N_TAB   &kp W_FWRD  &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
-        &kp LGUI  &kp LALT    &kp LSHFT   &kp LCTRL   &kp W_BACK  &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt W_NAV ENTER
-&trans  &kp UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                              &trans      WMNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
-            >;          
+        &tog W_MOU &kp LG(TAB) &kp P_TAB   &kp N_TAB   &kp W_FWRD  &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
+        &kp LGUI   &kp LALT    &kp LSHFT   &kp LCTRL   &kp W_BACK  &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
+&trans  &kp UNDO   &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                               &trans      WMNAV       &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
+            >;
         };
 
         AOE {
@@ -481,7 +481,7 @@
             bindings = <
         &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans  &trans  &trans   &trans   &kp BSPC
         &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans  &trans  &trans   &trans   &kp ENTER
-&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &vol_b_d &vol_b_u &kp F3   &none
+&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &volbrid &volbriu &kp F3   &none
                                    &none        &trans        &kp DEL  &trans  &trans  &none
             >;
         };
