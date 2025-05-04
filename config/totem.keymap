@@ -42,8 +42,8 @@
 #define M_CTL LC(UP)
 
 // W_NAV key defines for macOS Shortcuts
-#define W_BACK  LC(LBKT)
-#define W_FWRD  LC(RBKT)
+#define W_BACK  LA(LEFT)
+#define W_FWRD  LA(RIGHT)
 #define W_UNDO  LC(Z)
 #define W_CUT   LC(X)
 #define W_COPY  LC(C)
