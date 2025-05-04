@@ -99,17 +99,15 @@
         // Making the keyboard more accessible for one-handed use
         COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF,      60)
         COMBO(left_tab,             &kp TAB,                     1     3, DEF,      60)
-        // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
+        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
         COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
-        
+
         COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NUM,  60)
         COMBO(right_tab,            &kp TAB,                     6     8, DEF NUM,  60)
-        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
+        COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60) // non-mod variant for NUM layer
         COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, DEF,      60)
-        // non-mod variant for NUM layer
-        COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60)
-        COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60)
+        COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60) // non-mod variant for NUM layer
 
         // Layer toggles and other gimmickry
 
@@ -134,43 +132,42 @@
 
 
         // Combos for WIN layers
-        COMBO(togle_windows_layers, &tog W_DEF,                 10 11 20, DEF W_DEF,  60)
+        COMBO(togle_windows_layers, &tog W_DEF,                 20 31, DEF W_DEF,  60)
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(w_left_esc,             &kp ESCAPE,                  1  2  3, W_DEF,      60)
-        COMBO(w_left_tab,             &kp TAB,                     1     3, W_DEF,      60)
-        COMBO(w_left_enter,           &hrml LA(LS(LCTRL)) ENTER,  11 12 13, W_DEF,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(w_left_backspace,       &hrml LA(LCTRL) BSPC,       11    13, W_DEF,      60)
+        COMBO(w_left_esc,           &kp ESCAPE,                  1  2  3, W_DEF,      60)
+        COMBO(w_left_tab,           &kp TAB,                     1     3, W_DEF,      60)
+        COMBO(w_left_enter,         &hrml LA(LS(LCTRL)) ENTER,  11 12 13, W_DEF,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
+        COMBO(w_left_backspace,     &hrml LA(LCTRL) BSPC,       11    13, W_DEF,      60)
         
-        COMBO(w_right_esc,            &kp ESCAPE,                  6  7  8, W_DEF W_NUM, 60)
-        COMBO(w_right_tab,            &kp TAB,                     6     8, W_DEF W_NUM, 60)
-        COMBO(w_right_enter,          &hrml RA(LS(RCTRL)) ENTER,  16 17 18, W_DEF,       60)
-        COMBO(w_right_backspace,      &hrml RA(RCTRL) BSPC,       16    18, W_DEF,       60)
+        COMBO(w_right_esc,          &kp ESCAPE,                  6  7  8, W_DEF W_NUM, 60)
+        COMBO(w_right_tab,          &kp TAB,                     6     8, W_DEF W_NUM, 60)
+        COMBO(w_right_enter,        &hrml RA(LS(RCTRL)) ENTER,  16 17 18, W_DEF,       60)
+        COMBO(w_right_backspace,    &hrml RA(RCTRL) BSPC,       16    18, W_DEF,       60)
         
         // non-mod variants for W_NUM layer
-        COMBO(w_right_num_enter,      &kp ENTER,                  16 17 18,     W_NUM,   60)
-        COMBO(w_right_num_bspc,       &kp BSPC,                   16    18,     W_NUM,   60)
+        COMBO(w_right_num_enter,    &kp ENTER,                  16 17 18,     W_NUM,   60)
+        COMBO(w_right_num_bspc,     &kp BSPC,                   16    18,     W_NUM,   60)
 
         // Layer toggles and other gimmickry for WIN layers
 
-        COMBO(w_tog_nav,              &tc W_NAV,                  25 33,    W_DEF W_NAV,  60)
-        COMBO(w_tog_sym,              &sl W_SYM,                  26 36,    W_DEF W_SYM,  60)
-        COMBO(w_tog_mou,              &tc W_MOU,                  22 23 24, W_DEF MOU,    60)
-        COMBO(w_tog_num,              &tc W_NUM,                  27 28 29, W_DEF W_NUM,  60)
-        COMBO(w_tog_num_word,         &num_word W_NUM,            17 36,    W_DEF W_NUM,  60)
-        COMBO(w_tog_caps_word,        &caps_word,                 12 17,    W_DEF,        60)
+        COMBO(w_tog_nav,            &tc W_NAV,                  25 33,    W_DEF W_NAV,  60)
+        COMBO(w_tog_sym,            &sl W_SYM,                  26 36,    W_DEF W_SYM,  60)
+        COMBO(w_tog_mou,            &tc W_MOU,                  22 23 24, W_DEF MOU,    60)
+        COMBO(w_tog_num,            &tc W_NUM,                  27 28 29, W_DEF W_NUM,  60)
+        COMBO(w_tog_num_word,       &num_word W_NUM,            17 36,    W_DEF W_NUM,  60)
+        COMBO(w_tog_caps_word,      &caps_word,                 12 17,    W_DEF,        60)
 
         // SYS combos to connect to BT devices from W_FUN layer
         
-        COMBO(w_sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,    W_FUN,      60)
-        COMBO(w_sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,    W_FUN,      60)
-        COMBO(w_sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,    W_FUN,      60)
-        
-        COMBO(w_sys_bootloader,       &bootloader,                21 22,    W_FUN,      60)
-        COMBO(w_sys_clear_br_profile, &bt BT_CLR,                 29 30,    W_FUN,      60)
+        COMBO(w_sys_connect_to_bt0, &bt BT_SEL 0,                3  4,    W_FUN,      60)
+        COMBO(w_sys_connect_to_bt1, &bt BT_SEL 1,               13 14,    W_FUN,      60)
+        COMBO(w_sys_connect_to_bt2, &bt BT_SEL 2,               24 25,    W_FUN,      60)
+        COMBO(w_sys_bootloader,       &bootloader,              21 22,    W_FUN,      60)
+        COMBO(w_sys_clear_br_profile, &bt BT_CLR,               29 30,    W_FUN,      60)
         
         // AOE layer toggles
-        COMBO(w_togle_aoe_layer,      &tog AOE,                   10 11 20, W_DEF AOE, 60)
+        COMBO(w_togle_aoe_layer,    &tog AOE,                   10 11 20, W_DEF AOE, 60)
 
     };
 
@@ -199,6 +196,22 @@
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
 
             mods = <(MOD_LCTL)>;
+        };
+
+ _   w_volb_u: volume_brightness_up_on_control {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
+
+            mods = <(MOD_LGUI)>;
+        };
+
+        w_vol_bd: volume_brightness_down_on_control {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
+
+            mods = <(MOD_LGUI)>;
         };
 
         // Swapper for Apple's CMD+TAB behavior
@@ -292,6 +305,7 @@
         };
         
         #define MNAV &mo_to NAV DEF
+        #define WMNAV &mo_to NAV W_DEF // no need to use W_NAV here since it is already defined as a layer bellow W_MOU for the processor input behavior
 
     };
 
@@ -414,16 +428,16 @@
         &none     &none    &none     &none    &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
         &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp DOT
 &trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1      &kp N2  &kp N3  &kp SLASH &mt LA(BSPC) BSPC 
-                           &trans    &trans   &sk LGUI  &trans     &lt SYM N0  &trans
+                           &trans    &trans   &sk LCTRL &trans     &lt SYM N0  &trans
             >;
         };
 
         W_NAV {
             bindings = <
-        &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
-        &sk LGUI        &sk LALT    &sk LSHFT   &sk LCTRL   &kp BACK    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &vol_b_d  &vol_b_u   &kp DEL  &trans
-                                    &trans      &trans      &kp SPACE   &trans     &trans    &trans
+        &kp TAB     &wswapper   &kp P_TAB   &kp N_TAB   &kp W_FWRD  &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+        &sk LGUI    &sk LALT    &sk LSHFT   &sk LCTRL   &kp W_BACK  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+&trans  &kp W_UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp F18     &playnp    &kp F19   &w_volb_d &w_volb_u &kp DEL  &trans
+                                &trans      &trans      &kp SPACE   &trans     &trans    &trans
             >;
         };
 
@@ -450,7 +464,7 @@
         &tog MOU  &kp LG(TAB) &kp P_TAB   &kp N_TAB   &kp W_FWRD  &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
         &kp LGUI  &kp LALT    &kp LSHFT   &kp LCTRL   &kp W_BACK  &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt W_NAV ENTER
 &trans  &kp UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                    &trans      MNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
+                              &trans      WMNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
 
