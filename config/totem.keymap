@@ -5,17 +5,26 @@
 #include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
 #include <dt-bindings/zmk/mouse.h>
 
+// macOS layers
 #define DEF 0
 #define NUM 1 // must be bellow SYM and NAV to access keys on those layers
 #define NAV 2 // must be bellow MOU for input_processor to work
 #define SYM 3
 #define FUN 4
 #define MOU 5 
-#define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
-#define AGS 7
-#define ABS 8
 
-#define BAS 0 6 // Base layers for combos and other stuff
+// Windows layers
+#define W_DEF 6
+#define W_NUM 7 // must be bellow SYM and NAV to access keys on those layers
+#define W_NAV 8 // must be bellow MOU for input_processor to work
+#define W_SYM 9
+#define W_FUN 10
+#define W_MOU 11
+
+// AOE layers
+#define AOE 12 // AOE 2 layers with easier access for default shortcuts on main layer
+#define AGS 13
+#define ABS 14
 
 #include "mouse.dtsi" // Requires layer defines above
 
@@ -31,6 +40,16 @@
 #define COPY  LG(C)
 #define PASTE LG(V)
 #define M_CTL LC(UP)
+
+// W_NAV key defines for macOS Shortcuts
+#define P_TAB LS(LC(TAB))
+#define N_TAB LC(TAB)
+#define BACK  LC(LBKT)
+#define FWRD  LC(RBKT)
+#define UNDO  LC(Z)
+#define CUT   LC(X)
+#define COPY  LC(C)
+#define PASTE LC(V)
 
 // Customizing base behaviors
 
@@ -78,28 +97,28 @@
 
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, BAS,      60)
-        COMBO(left_tab,             &kp TAB,                     1     3, BAS,      60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3, DEF,      60)
+        COMBO(left_tab,             &kp TAB,                     1     3, DEF,      60)
         // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, BAS,      60)
-        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, BAS,      60)
+        COMBO(left_enter,           &hrml LA(LS(LGUI)) ENTER,   11 12 13, DEF,      60)
+        COMBO(left_backspace,       &hrml LA(LGUI) BSPC,        11    13, DEF,      60)
         
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, BAS NUM,  60)
-        COMBO(right_tab,            &kp TAB,                     6     8, BAS NUM,  60)
-        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, BAS,      60)
-        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, BAS,      60)
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8, DEF NUM,  60)
+        COMBO(right_tab,            &kp TAB,                     6     8, DEF NUM,  60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18, DEF,      60)
+        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18, DEF,      60)
         // non-mod variant for NUM layer
         COMBO(right_num_enter,      &kp ENTER,                  16 17 18,     NUM,  60)
         COMBO(right_num_bspc,       &kp BSPC,                   16    18,     NUM,  60)
 
         // Layer toggles and other gimmickry
 
-        COMBO(tog_nav,              &tc NAV,                    25 33,    BAS NAV,  60)
-        COMBO(tog_sym,              &sl SYM,                    26 36,    BAS SYM,  60)
-        COMBO(tog_mou,              &tc MOU,                    22 23 24, BAS MOU,  60)
-        COMBO(tog_num,              &tc NUM,                    27 28 29, BAS NUM,  60)
-        COMBO(tog_num_word,         &num_word NUM,              17 36,    BAS NUM,  60)
-        COMBO(tog_caps_word,        &caps_word,                 12 17,    BAS,      60)
+        COMBO(tog_nav,              &tc NAV,                    25 33,    DEF NAV,  60)
+        COMBO(tog_sym,              &sl SYM,                    26 36,    DEF SYM,  60)
+        COMBO(tog_mou,              &tc MOU,                    22 23 24, DEF MOU,  60)
+        COMBO(tog_num,              &tc NUM,                    27 28 29, DEF NUM,  60)
+        COMBO(tog_num_word,         &num_word NUM,              17 36,    DEF NUM,  60)
+        COMBO(tog_caps_word,        &caps_word,                 12 17,    DEF,      60)
 
         // SYS combos to connect to BT devices from FUN layer
         
@@ -112,6 +131,46 @@
 
         // AOE combos for the AOE layer
         COMBO(togle_aoe_layer,      &tog AOE,                   10 11 20, DEF AOE,  60)
+
+
+        // Combos for WIN layers
+        COMBO(togle_windows_layers, &tog W_DEF,                 10 11 20, DEF W_DEF,  60)
+
+        // Making the keyboard more accessible for one-handed use
+        COMBO(w_left_esc,             &kp ESCAPE,                  1  2  3, W_DEF,      60)
+        COMBO(w_left_tab,             &kp TAB,                     1     3, W_DEF,      60)
+        COMBO(w_left_enter,           &hrml LA(LS(LCTRL)) ENTER,  11 12 13, W_DEF,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
+        COMBO(w_left_backspace,       &hrml LA(LCTRL) BSPC,       11    13, W_DEF,      60)
+        
+        COMBO(w_right_esc,            &kp ESCAPE,                  6  7  8, W_DEF W_NUM, 60)
+        COMBO(w_right_tab,            &kp TAB,                     6     8, W_DEF W_NUM, 60)
+        COMBO(w_right_enter,          &hrml RA(LS(RCTRL)) ENTER,  16 17 18, W_DEF,       60)
+        COMBO(w_right_backspace,      &hrml RA(RCTRL) BSPC,       16    18, W_DEF,       60)
+        
+        // non-mod variants for W_NUM layer
+        COMBO(w_right_num_enter,      &kp ENTER,                  16 17 18,     W_NUM,   60)
+        COMBO(w_right_num_bspc,       &kp BSPC,                   16    18,     W_NUM,   60)
+
+        // Layer toggles and other gimmickry for WIN layers
+
+        COMBO(w_tog_nav,              &tc W_NAV,                  25 33,    W_DEF W_NAV,  60)
+        COMBO(w_tog_sym,              &sl W_SYM,                  26 36,    W_DEF W_SYM,  60)
+        COMBO(w_tog_mou,              &tc W_MOU,                  22 23 24, W_DEF MOU,    60)
+        COMBO(w_tog_num,              &tc W_NUM,                  27 28 29, W_DEF W_NUM,  60)
+        COMBO(w_tog_num_word,         &num_word W_NUM,            17 36,    W_DEF W_NUM,  60)
+        COMBO(w_tog_caps_word,        &caps_word,                 12 17,    W_DEF,        60)
+
+        // SYS combos to connect to BT devices from W_FUN layer
+        
+        COMBO(w_sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,    W_FUN,      60)
+        COMBO(w_sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,    W_FUN,      60)
+        COMBO(w_sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,    W_FUN,      60)
+        
+        COMBO(w_sys_bootloader,       &bootloader,                21 22,    W_FUN,      60)
+        COMBO(w_sys_clear_br_profile, &bt BT_CLR,                 29 30,    W_FUN,      60)
+        
+        // AOE layer toggles
+        COMBO(w_togle_aoe_layer,      &tog AOE,                   10 11 20, W_DEF AOE, 60)
 
     };
 
@@ -148,6 +207,16 @@
             compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
+
+            ignored-key-positions = <7 16 17 18 9 19 30>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
+        };
+
+        // Swapper for Windows's ALT+TAB behavior
+
+        wswapper: swapper_for_windows_alt_tab {
+            compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
             ignored-key-positions = <7 16 17 18 9 19 30>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
         };
@@ -267,6 +336,11 @@
             if-layers = <NAV SYM>;
             then-layer = <FUN>;
         };
+        
+        win_tri_layer_for_function_and_number_row_keys {
+            if-layers = <W_NAV W_SYM>;
+            then-layer = <W_FUN>;
+        };
     };
 
     keymap {
@@ -322,6 +396,60 @@
         &tog MOU        &kp M_CTL   &kp P_TAB   &kp N_TAB   &kp FWRD    &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
         &kp LCTRL       &kp LALT    &kp LSHFT   &kp LGUI    &kp BACK    &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
 &trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F11     &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                                    &trans      MNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
+            >;          
+        };
+                
+        W_DEF {
+            bindings = <
+                  &ltl MOU Q     &kp W         &kp E         &kp R        &kp T          &kp Y        &kp U         &kp I          &kp O         &kp P
+                  &hrml LGUI A  &hrml LALT S  &hrml LSHFT D &hrml LCTRL F &hrml HYPR G   &hrmr HYPR H &hrmr RCTRL J &hrmr LSHFT K  &hrmr RALT L  &hrmr RGUI SQT
+&mt LA(BSPC) BSPC &hrml GLOBE Z  &ltl NUM X    &ltl NUM C    &ltl NUM V   &kp B          &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
+                                               &none         &lc NAV      &mt RSHFT LGUI &kp SPACE    &lc SYM       &none
+            >;
+        };
+          
+        W_NUM {
+            bindings = <
+        &none     &none    &none     &none    &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+        &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp DOT
+&trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1      &kp N2  &kp N3  &kp SLASH &mt LA(BSPC) BSPC 
+                           &trans    &trans   &sk LGUI  &trans     &lt SYM N0  &trans
+            >;
+        };
+
+        W_NAV {
+            bindings = <
+        &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+        &sk LGUI        &sk LALT    &sk LSHFT   &sk LCTRL   &kp BACK    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+&trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &vol_b_d  &vol_b_u   &kp DEL  &trans
+                                    &trans      &trans      &kp SPACE   &trans     &trans    &trans
+            >;
+        };
+
+        W_SYM {
+            bindings = <
+        &kp ESC   &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
+        &kp MINUS &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RCTRL &sk LSHFT &sk RALT &sk RGUI 
+&kp LT  &kp EQUAL &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &kp GT
+                             &trans     &trans     &mt RSHFT UNDER &kp UNDER &trans    &trans 
+            >;
+        };
+
+        W_FUN {
+            bindings = <
+        &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
+        &sk LGUI   &sk LALT  &sk LSHFT  &sk LCTRL &kp F11       &kp F12  &sk RCTRL &sk LSHFT  &sk RALT  &sk RGUI
+&trans  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6   &kp F7    &kp F8     &kp F9    &kp F10   &trans
+                             &trans     &trans    &kp C_POWER   &kp CAPS &trans    &trans
+            >;
+        };
+  
+        W_MOU {
+            bindings = <
+        &tog MOU  &kp LG(TAB) &kp P_TAB   &kp N_TAB   &kp W_FWRD  &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
+        &kp LGUI  &kp LALT    &kp LSHFT   &kp LCTRL   &kp W_BACK  &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt W_NAV ENTER
+&trans  &kp UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
                                     &trans      MNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
