@@ -42,14 +42,12 @@
 #define M_CTL LC(UP)
 
 // W_NAV key defines for macOS Shortcuts
-#define P_TAB LS(LC(TAB))
-#define N_TAB LC(TAB)
-#define BACK  LC(LBKT)
-#define FWRD  LC(RBKT)
-#define UNDO  LC(Z)
-#define CUT   LC(X)
-#define COPY  LC(C)
-#define PASTE LC(V)
+#define W_BACK  LC(LBKT)
+#define W_FWRD  LC(RBKT)
+#define W_UNDO  LC(Z)
+#define W_CUT   LC(X)
+#define W_COPY  LC(C)
+#define W_PASTE LC(V)
 
 // Customizing base behaviors
 
