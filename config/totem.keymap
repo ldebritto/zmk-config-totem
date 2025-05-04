@@ -149,8 +149,8 @@
 
         // Layer toggles and other gimmickry for WIN layers
 
-        COMBO(w_close_win,          &kp LA(F4),                  2  3  4, W_DEF W_NAV,  60)
-        COMBO(w_close_tab,          &kp LC(W),                   2     4, W_DEF W_NAV,  60)
+        COMBO(w_close_win,          &kp LA(F4),                  0  1  2, W_DEF W_NAV,  60)
+        COMBO(w_close_tab,          &kp LC(W),                   0  1,    W_DEF W_NAV,  60)
         COMBO(w_tog_nav,            &tc W_NAV,                  25 33,    W_DEF W_NAV,  60)
         COMBO(w_tog_sym,            &sl W_SYM,                  26 36,    W_DEF W_SYM,  60)
         COMBO(w_tog_mou,            &tc W_MOU,                  22 23 24, W_DEF MOU,    60)
