@@ -198,7 +198,7 @@
             mods = <(MOD_LCTL)>;
         };
 
- _   wvolbriu: volume_brightness_up_on_control {
+       wvolbriu: volume_brightness_up_on_control {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
