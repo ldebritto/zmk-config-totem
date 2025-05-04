@@ -198,7 +198,7 @@
             mods = <(MOD_LCTL)>;
         };
 
-       wvolbriu: volume_brightness_up_on_control {
+       wvolbriu: windows_volume_brightness_up_on_control { // Chose WIN key to make it work with my own muscle memory here from macOS layers
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
@@ -206,7 +206,7 @@
             mods = <(MOD_LGUI)>;
         };
 
-        w_vol_bd: volume_brightness_down_on_control {
+        w_vol_bd: windows_volume_brightness_down_on_control { // Chose WIN key to make it work with my own muscle memory here from macOS layers
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
