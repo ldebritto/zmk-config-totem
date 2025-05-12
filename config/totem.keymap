@@ -95,44 +95,37 @@
 
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3,    DEF NAV AOE, 60)
-        COMBO(left_tab,             &kp TAB,                     1     3,    DEF NAV,     60)
-        COMBO(left_top_enter,       &kp ENTER,                0  1  2  3,    DEF NAV,     60) // experimenting with top combos to avoid mismatch with fast NAV mods
-        COMBO(left_top_backspace,   &kp BSPC,                       3  4,    DEF NAV,     60)
-        // COMBO(left_hr_enter,        &hrml LA(LS(LGUI)) ENTER,   11 12 13,    DEF     AOE, 60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        // COMBO(left_hr_backspace,    &hrml LA(LGUI) BSPC,        11    13,    DEF     AOE, 60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3,    DEF NAV MOU AOE, 60)
+        COMBO(left_tab,             &kp TAB,                     1     3,    DEF NAV MOU,     60)
+        COMBO(left_hr_enter,        &hrml LA(LS(LGUI)) ENTER,   11 12 13,    DEF     MOU AOE, 60)
+        COMBO(left_hr_backspace,    &hrml LA(LGUI) BSPC,        11    13,    DEF     MOU AOE, 60)
   
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8,    DEF NUM,     60)
-        COMBO(right_tab,            &kp TAB,                     6     8,    DEF NUM,     60)
-        COMBO(right_top_enter,      &kp ENTER,                6  7  8  9,    DEF NUM MOU, 60) // experimenting with top combos to avoid mismatch with fast NAV mods
-        COMBO(right_top_backspace,  &kp BSPC,                       8  9,    DEF NUM MOU, 60)
-        // COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF,         60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        // COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF,         60)
-        // COMBO(right_num_enter,      &kp ENTER,                  16 17 18,        NUM,     60) // non-mod variant for NUM layer
-        // COMBO(right_num_bspc,       &kp BSPC,                   16    18,        NUM,     60) // non-mod variant for NUM layer
-
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8,    DEF NUM,         60)
+        COMBO(right_tab,            &kp TAB,                     6     8,    DEF NUM,         60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF NUM,         60)
+        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF NUM,         60)
+        
         // Layer toggles and other gimmickry
-        COMBO(tog_sym,              &sl SYM,                    26 36,       DEF SYM,     60)
-        COMBO(tog_nav,              &tc NAV,                       22 23 24, DEF NAV,     60)
-        COMBO(tog_mou,              &tc MOU,                    21 22 23 24, DEF MOU,     60)
-        COMBO(tog_num,              &tc NUM,                    27 28 29,    DEF NUM,     60)
-        COMBO(tog_num_word,         &num_word NUM,              17 36,       DEF NUM,     60)
-        COMBO(tog_caps_word,        &caps_word,                 12 17,       DEF,         60)
+        COMBO(tog_nav,              &tc NAV,                       22 23 24, DEF NAV,         60)
+        COMBO(tog_mou,              &tc MOU,                    21 22 23 24, DEF MOU,         60)
+        COMBO(tog_num,              &tc NUM,                    27 28 29,    DEF NUM,         60)
+        COMBO(tog_sym,              &sl SYM,                    26 36,       DEF SYM,         60)
+        COMBO(tog_num_word,         &num_word NUM,              17 36,       DEF NUM,         60)
+        COMBO(tog_caps_word,        &caps_word,                 12 17,       DEF,             60)
 
         // SYS combos to connect to BT devices from FUN layer
         
-        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,       FUN,         60)
-        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,       FUN,         60)
-        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,       FUN,         60)
-        COMBO(sys_bootloader,       &bootloader,                21 22,       FUN,         60)
-        COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,       FUN,         60)
+        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,       FUN,             60)
+        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,       FUN,             60)
+        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,       FUN,             60)
+        COMBO(sys_bootloader,       &bootloader,                21 22,       FUN,             60)
+        COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,       FUN,             60)
 
         // AOE combos for the AOE layer
-        COMBO(togle_aoe_layer,      &tog AOE,                   10 11 20,    DEF AOE,     60)
-
+        COMBO(togle_aoe_layer,      &tc AOE,                    10 11 20,    DEF W_DEF AOE,   60)
 
         // Combos for WIN layers
-        COMBO(togle_windows_layers, &tc W_DEF,                   20 31,     DEF W_DEF,    60)
+        COMBO(togle_windows_layers, &tc W_DEF,                   20 31,     DEF W_DEF,        60)
 
         // Making the keyboard more accessible for one-handed use
         COMBO(w_left_esc,           &kp ESCAPE,                  1  2  3,   W_DEF,        60)
@@ -142,12 +135,8 @@
         
         COMBO(w_right_esc,          &kp ESCAPE,                  6  7  8,   W_DEF W_NUM,  60)
         COMBO(w_right_tab,          &kp TAB,                     6     8,   W_DEF W_NUM,  60)
-        COMBO(w_right_enter,        &hrml RA(LS(RCTRL)) ENTER,  16 17 18,   W_DEF,        60)
-        COMBO(w_right_backspace,    &hrml RA(RCTRL) BSPC,       16    18,   W_DEF,        60)
-        
-        // non-mod variants for W_NUM layer
-        COMBO(w_right_num_bspc,     &kp BSPC,                   16    18,         W_NUM,  60)
-        COMBO(w_right_num_enter,    &kp ENTER,                  16 17 18,         W_NUM,  60)
+        COMBO(w_right_enter,        &hrml RA(LS(RCTRL)) ENTER,  16 17 18,   W_DEF W_NUM,  60)
+        COMBO(w_right_backspace,    &hrml RA(RCTRL) BSPC,       16    18,   W_DEF W_NUM,  60)
 
         // Layer toggles and other gimmickry for WIN layers
         COMBO(w_close_win,          &kp LA(F4),                  0  1  2,   W_DEF W_NAV,  60)
@@ -166,9 +155,6 @@
         COMBO(w_sys_connect_to_bt2, &bt BT_SEL 2,               24 25,      W_FUN,        60)
         COMBO(w_sys_bootloader,       &bootloader,              21 22,      W_FUN,        60)
         COMBO(w_sys_clear_br_profile, &bt BT_CLR,               29 30,      W_FUN,        60)
-        
-        // AOE layer toggles
-        COMBO(w_togle_aoe_layer,    &tog AOE,                   10 11 20,   W_DEF AOE,    60)
 
     };
 
@@ -295,18 +281,18 @@
             require-prior-idle-ms = <175>;
         };
 
-        // Layer-tap to escape from MOU and NUM to DEF on tap but still preserve the ability to trigger NAV on hold for input processor to work properly
-        mo_to: mouse_layer_tap_cancel {
+                // Layer-tap do escape from MOU and NUM to      DEF on tap but still be able to use the NAV or SYM layers from the previous layers
+        moto: mo_to_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_TO";
-            bindings = <&mo>, <&to>;
+            label = "MTL";
+            bindings = <&lc>, <&tc>;
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <150>;
+            flavor = "hold-preferred"; // Will hold on another simultaneous keypress such as mouse movement keys
+            tapping-term-ms = <200>; 
         };
         
-        #define MNAV &mo_to NAV DEF
-        #define WMNAV &mo_to NAV W_DEF // no need to use W_NAV here since it is already defined as a layer bellow W_MOU for the processor input behavior
+        #define C_NAV &moto NAV DEF // back to DEF on tap and NAV on hold (for mouse input processor on MOU and general movement on other toggled layers) 
+        #define C_WNAV &moto NAV W_DEF // back to DEF on tap and NAV on hold (for mouse input processor on MOU and general movement on other toggled layers) 
 
     };
 
@@ -339,7 +325,7 @@
                 <&macro_tap>,
                 <&kp K_CANCEL &macro_param_1to1>,
                 <&macro_press>,
-                <&tog MACRO_PLACEHOLDER>;
+                <&to MACRO_PLACEHOLDER>;
         };
   
     };
@@ -375,7 +361,7 @@
         &none     &none    &none     &none    &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
         &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
 &trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT   &mt LA(BSPC) BSPC 
-                           &trans    &trans   &sk LGUI  &trans     &lt SYM N0  &trans
+                           &trans    C_NAV    &sk LGUI  &trans     &lt SYM N0  &trans
             >;
         };
 
@@ -384,7 +370,7 @@
         &kp TAB         &swapper    &kp P_TAB   &kp N_TAB   &kp FWRD    &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL       &sk LALT    &sk LSHFT   &sk LGUI    &kp BACK    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F18     &playnp    &kp F19   &volbrid  &volbriu   &kp DEL  &trans
-                                    &trans      &trans      &kp SPACE   &trans     &trans    &trans
+                                    &trans      C_NAV       &kp SPACE   &trans     &trans    &trans
             >;
         };
 
@@ -393,7 +379,7 @@
         &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RGUI  &sk LSHFT &sk RALT &sk RCTRL
 &kp LT  &mt GLOBE EQUAL &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &kp GT
-                              &trans     &trans     &mt RSHFT UNDER &kp UNDER &trans    &trans 
+                                   &trans     C_NAV      &mt RSHFT UNDER &kp UNDER &trans    &trans 
             >;
         };
 
@@ -408,10 +394,10 @@
   
         MOU {
             bindings = <
-        &tog MOU        &kp M_CTL   &kp P_TAB   &kp N_TAB   &kp FWRD    &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+        &kp TAB         &kp M_CTL   &kp P_TAB   &kp N_TAB   &kp FWRD    &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
         &kp LCTRL       &kp LALT    &kp LSHFT   &kp LGUI    &kp BACK    &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
 &trans  &mt GLOBE UNDO  &kp CUT     &kp COPY    &kp PASTE   &kp F11     &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                    &trans      MNAV        &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
+                                    &trans      C_NAV       &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
                 
@@ -429,7 +415,7 @@
         &none     &none    &none     &none    &none     &kp LA(N6) &kp N7       &kp N8  &kp N9  &mt LA(N9) LA(N0)
         &sk LGUI &sk LALT &sk LSHFT &sk LCTRL &none     &kp MINUS  &kp N4       &kp N5  &kp N6  &kp DOT
 &trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1       &kp N2  &kp N3  &kp SLASH &mt LC(BSPC) BSPC 
-                           &trans    &trans   &sk LCTRL &trans     &lt W_SYM N0 &trans
+                           &trans    C_WNAV   &sk LCTRL &trans     &lt W_SYM N0 &trans
             >;
         };
 
@@ -438,7 +424,7 @@
         &kp TAB     &wswapper   &kp P_TAB   &kp N_TAB   &kp W_FWRD  &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LGUI    &sk LALT    &sk LSHFT   &sk LCTRL   &kp W_BACK  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
 &trans  &kp W_UNDO  &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp F18     &playnp    &kp F19   &wvolbrid &wvolbriu  &kp DEL  &trans
-                                &trans      &trans      &kp SPACE   &trans     &trans    &trans
+                                &trans      C_WNAV      &kp SPACE   &trans     &trans    &trans
             >;
         };
 
@@ -447,7 +433,7 @@
         &kp ESC   &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RCTRL &sk LSHFT &sk RALT &sk RGUI 
 &kp LT  &kp EQUAL &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &kp GT
-                             &trans     &trans     &mt RSHFT UNDER &kp UNDER &trans    &trans 
+                             &trans     C_WNAV     &mt RSHFT UNDER &kp UNDER &trans    &trans 
             >;
         };
 
@@ -464,8 +450,8 @@
             bindings = <
         &tog W_MOU &kp LG(TAB) &kp P_TAB   &kp N_TAB   &kp W_FWRD  &msc SCRL_UP     &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &kp BSPC
         &kp LGUI   &kp LALT    &kp LSHFT   &kp LCTRL   &kp W_BACK  &msc SCRL_DOWN   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
-&trans  &kp UNDO   &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                               &trans      WMNAV       &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
+&none   &kp UNDO   &kp W_CUT   &kp W_COPY  &kp W_PASTE &kp LG(D)   &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                               &none       C_WNAV       &kp SPACE   &mkp LCLK        &mkp RCLK       &trans
             >;
         };
 
@@ -480,10 +466,10 @@
 
         AGS {
             bindings = <
-        &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans  &trans  &trans   &trans   &kp BSPC
-        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans  &trans  &trans   &trans   &kp ENTER
-&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &trans  &trans  &volbrid &volbriu &kp F3   &none
-                                   &none        &trans        &kp DEL  &trans  &trans  &none
+        &kp N1        &kp N2       &kp N3       &kp N4        &kp DEL    &trans    &trans  &trans   &trans   &kp BSPC
+        &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp HOME   &trans    &trans  &trans   &trans   &kp ENTER
+&none   &kp COMMA     &kp DOT      &kp BSPC     &kp HOME      &mo ABS    &kp MUTE  &trans  &volbrid &volbriu &kp F3   &none
+                                   &none        &trans        &kp DEL    &trans  &trans  &none
             >;
         };
 
@@ -492,7 +478,7 @@
         &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
         &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
 &none   &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &none
-                                        &none           &kp LC(LS(H))   &trans           &trans  &trans  &none
+                                        &none           &trans          &trans           &trans  &trans  &none
             >;
         };
   };
