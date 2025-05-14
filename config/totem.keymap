@@ -95,66 +95,65 @@
 
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(left_esc,             &kp ESCAPE,                  1  2  3,    DEF NAV MOU AOE, 60)
-        COMBO(left_tab,             &kp TAB,                     1     3,    DEF     MOU,     60)
-        COMBO(left_hr_enter,        &hrml LA(LS(LGUI)) ENTER,   11 12 13,    DEF     MOU AOE, 60)
-        COMBO(left_hr_backspace,    &hrml LA(LGUI) BSPC,        11    13,    DEF     MOU AOE, 60)
+        COMBO(left_esc,             &kp ESCAPE,                  1  2  3,    DEF NAV MOU AOE,   60)
+        COMBO(left_tab,             &kp TAB,                     1     3,    DEF     MOU AOE,   60)
+        COMBO(left_hr_enter,        &hrml LA(LS(LGUI)) ENTER,   11 12 13,    DEF     MOU AOE,   60)
+        COMBO(left_hr_backspace,    &hrml LA(LGUI) BSPC,        11    13,    DEF     MOU AOE,   60)
   
-        COMBO(right_esc,            &kp ESCAPE,                  6  7  8,    DEF NUM AOE,     60)
-        COMBO(right_tab,            &kp TAB,                     6     8,    DEF NUM AOE,     60)
-        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF NUM AOE,     60)
-        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF NUM AOE,     60)
+        COMBO(right_esc,            &kp ESCAPE,                  6  7  8,    DEF NUM     AOE,   60)
+        COMBO(right_tab,            &kp TAB,                     6     8,    DEF NUM     AOE,   60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF NUM     AOE,   60)
+        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF NUM     AOE,   60)
         
         // Layer toggles and other gimmickry
-        COMBO(tog_nav,              &tc NAV,                       22 23 24, DEF NAV,         60)
-        COMBO(tog_mou,              &tc MOU,                    21 22 23 24, DEF MOU,         60)
-        COMBO(tog_num,              &tc NUM,                    27 28 29,    DEF NUM,         60)
-        COMBO(tog_sym,              &sl SYM,                    26 36,       DEF SYM,         60)
-        COMBO(tog_num_word,         &num_word NUM,              17 36,       DEF NUM,         60)
-        COMBO(tog_caps_word,        &caps_word,                 12 17,       DEF,             60)
+        COMBO(tog_nav,              &tc NAV,                       22 23 24, DEF NAV,           60)
+        COMBO(tog_mou,              &tc MOU,                    21 22 23 24, DEF MOU,           60)
+        COMBO(tog_num,              &tc NUM,                    27 28 29,    DEF NUM,           60)
+        COMBO(tog_sym,              &sl SYM,                    26 36,       DEF SYM,           60)
+        COMBO(tog_num_word,         &num_word NUM,              17 36,       DEF NUM,           60)
+        COMBO(tog_caps_word,        &caps_word,                 12 17,       DEF,               60)
 
         // SYS combos to connect to BT devices from FUN layer
         
-        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,       FUN,             60)
-        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,       FUN,             60)
-        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,       FUN,             60)
-        COMBO(sys_bootloader,       &bootloader,                21 22,       FUN,             60)
-        COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,       FUN,             60)
+        COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,       FUN,               60)
+        COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,       FUN,               60)
+        COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,       FUN,               60)
+        COMBO(sys_bootloader,       &bootloader,                21 22,       FUN,               60)
+        COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,       FUN,               60)
 
         // AOE combos for the AOE layer
-        COMBO(togle_aoe_layer,      &tc AOE,                    10 11 20,    DEF W_DEF AOE,   60)
+        COMBO(togle_aoe_layer,      &tog AOE,                    10 11 20,    DEF W_DEF AOE,     60)
 
         // Combos for WIN layers
-        COMBO(togle_windows_layers, &tc W_DEF,                   20 31,     DEF W_DEF,        60)
+        COMBO(togle_windows_layers, &tc W_DEF,                   20 31,      DEF W_DEF,         60)
 
         // Making the keyboard more accessible for one-handed use
-        COMBO(w_left_esc,           &kp ESCAPE,                  1  2  3,   W_DEF W_NAV W_MOU,      60)
-        COMBO(w_left_tab,           &kp TAB,                     1     3,   W_DEF W_MOU,      60)
-        COMBO(w_left_enter,         &hrml LA(LS(LCTRL)) ENTER,  11 12 13,   W_DEF W_MOU,      60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
-        COMBO(w_left_backspace,     &hrml LA(LCTRL) BSPC,       11    13,   W_DEF W_MOU,      60)
-        
-        COMBO(w_right_esc,          &kp ESCAPE,                  6  7  8,   W_DEF W_NUM,      60)
-        COMBO(w_right_tab,          &kp TAB,                     6     8,   W_DEF W_NUM,      60)
-        COMBO(w_right_enter,        &hrml RA(LS(RCTRL)) ENTER,  16 17 18,   W_DEF W_NUM,      60)
-        COMBO(w_right_backspace,    &hrml RA(RCTRL) BSPC,       16    18,   W_DEF W_NUM,      60)
+        COMBO(w_left_esc,           &kp ESCAPE,                  1  2  3,  W_DEF W_NAV W_MOU,   60)
+        COMBO(w_left_tab,           &kp TAB,                     1     3,  W_DEF W_MOU,         60)
+        COMBO(w_left_enter,         &hrml LA(LS(LCTRL)) ENTER,  11 12 13,  W_DEF W_MOU,         60) // hold-taps are erquired to make for the lack of tap-only combos as seen in urob's keymap 
+        COMBO(w_left_backspace,     &hrml LA(LCTRL) BSPC,       11    13,  W_DEF W_MOU,         60)
+
+        COMBO(w_right_esc,          &kp ESCAPE,                  6  7  8,  W_DEF W_NUM,         60)
+        COMBO(w_right_tab,          &kp TAB,                     6     8,  W_DEF W_NUM,         60)
+        COMBO(w_right_enter,        &hrml RA(LS(RCTRL)) ENTER,  16 17 18,  W_DEF W_NUM,         60)
+        COMBO(w_right_backspace,    &hrml RA(RCTRL) BSPC,       16    18,  W_DEF W_NUM,         60)
 
         // Layer toggles and other gimmickry for WIN layers
-        COMBO(w_close_win,          &kp LA(F4),                  0  1  2,   W_DEF W_NAV,      60)
-        COMBO(w_close_tab,          &kp LC(W),                   0  1,      W_DEF W_NAV,      60)
-        COMBO(w_tog_nav,            &tc W_NAV,                  25 33,      W_DEF W_NAV,      60)
-        COMBO(w_tog_sym,            &sl W_SYM,                  26 36,      W_DEF W_SYM,      60)
-        COMBO(w_tog_mou,            &tc W_MOU,                  22 23 24,   W_DEF MOU,        60)
-        COMBO(w_tog_num,            &tc W_NUM,                  27 28 29,   W_DEF W_NUM,      60)
-        COMBO(w_tog_num_word,       &num_word W_NUM,            17 36,      W_DEF W_NUM,      60)
-        COMBO(w_tog_caps_word,      &caps_word,                 12 17,      W_DEF,            60)
+        COMBO(w_close_win,          &kp LA(F4),                  0  1  2,  W_DEF W_NAV,         60)
+        COMBO(w_close_tab,          &kp LC(W),                   0  1,     W_DEF W_NAV,         60)
+        COMBO(w_tog_nav,            &tc W_NAV,                  25 33,     W_DEF W_NAV,         60)
+        COMBO(w_tog_sym,            &sl W_SYM,                  26 36,     W_DEF W_SYM,         60)
+        COMBO(w_tog_mou,            &tc W_MOU,                  22 23 24,  W_DEF MOU,           60)
+        COMBO(w_tog_num,            &tc W_NUM,                  27 28 29,  W_DEF W_NUM,         60)
+        COMBO(w_tog_num_word,       &num_word W_NUM,            17 36,     W_DEF W_NUM,         60)
+        COMBO(w_tog_caps_word,      &caps_word,                 12 17,     W_DEF,               60)
 
         // SYS combos to connect to BT devices from W_FUN layer
         
-        COMBO(w_sys_connect_to_bt0, &bt BT_SEL 0,                3  4,      W_FUN,            60)
-        COMBO(w_sys_connect_to_bt1, &bt BT_SEL 1,               13 14,      W_FUN,            60)
-        COMBO(w_sys_connect_to_bt2, &bt BT_SEL 2,               24 25,      W_FUN,            60)
-        COMBO(w_sys_bootloader,       &bootloader,              21 22,      W_FUN,            60)
-        COMBO(w_sys_clear_br_profile, &bt BT_CLR,               29 30,      W_FUN,            60)
+        COMBO(w_sys_connect_to_bt1, &bt BT_SEL 1,               13 14,     W_FUN,               60)
+        COMBO(w_sys_connect_to_bt2, &bt BT_SEL 2,               24 25,     W_FUN,               60)
+        COMBO(w_sys_bootloader,       &bootloader,              21 22,     W_FUN,               60)
+        COMBO(w_sys_clear_br_profile, &bt BT_CLR,               29 30,     W_FUN,               60)
 
     };
 
