@@ -11,7 +11,8 @@
 #define NAV 2 // must be bellow MOU for input_processor to work
 #define SYM 3
 #define FUN 4
-#define MOU 5 
+#define FUNKY 5 
+#define MOU 6
 
 // AOE layers
 #define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
@@ -60,12 +61,11 @@
             require-prior-idle-ms = <200>; \
         };
 
-        // Totem key positions for combos
+        // Totem key positions for combos cheat sheet
         //       0    1    2    3    4              5    6    7    8    9
         //      10   11   12   13   14             15   16   17   18   19
         // 20   21   22   23   24   25             26   27   28   29   30   31
         //                     32   33   34   35   36   37
-
 
         // Making the keyboard more accessible for one-handed use
         COMBO(left_esc,             &kp ESCAPE,                  1  2  3,    DEF NAV MOU AOE,   60)
@@ -79,23 +79,21 @@
         COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF NUM     AOE,   60)
         
         // Layer toggles and other gimmickry
-        COMBO(tog_nav,              &tc NAV,                       22 23 24, DEF NAV,           60)
-        COMBO(tog_mou,              &tc MOU,                    21 22 23 24, DEF MOU,           60)
-        COMBO(tog_num,              &tc NUM,                    27 28 29,    DEF NUM,           60)
-        COMBO(tog_sym,              &sl SYM,                    26 36,       DEF SYM,           60)
+        COMBO(to_nav,               &tc NAV,                       22 23 24, DEF NAV,           60)
+        COMBO(to_mou,               &tc MOU,                    21 22 23 24, DEF MOU,           60)
+        COMBO(to_num,               &tc NUM,                    27 28 29,    DEF NUM,           60)
+        COMBO(mo_funky,             &mo FUNKY,                  24 25,       DEF NUM,           60)
+        COMBO(sticky_sym,           &sl SYM,                    26 36,       DEF SYM,           60)
         COMBO(tog_num_word,         &num_word NUM,              17 36,       DEF NUM,           60)
         COMBO(tog_caps_word,        &caps_word,                 12 17,       DEF,               60)
+        COMBO(togle_aoe_layer,      &tog AOE,                   10 11 20,    DEF AOE,           60)
 
         // SYS combos to connect to BT devices from FUN layer
-        
         COMBO(sys_connect_to_bt0,   &bt BT_SEL 0,                3  4,       FUN,               60)
         COMBO(sys_connect_to_bt1,   &bt BT_SEL 1,               13 14,       FUN,               60)
         COMBO(sys_connect_to_bt2,   &bt BT_SEL 2,               24 25,       FUN,               60)
         COMBO(sys_bootloader,       &bootloader,                21 22,       FUN,               60)
         COMBO(sys_clear_br_profile, &bt BT_CLR,                 29 30,       FUN,               60)
-
-        // AOE combos for the AOE layer
-        COMBO(togle_aoe_layer,      &tog AOE,                   10 11 20,    DEF AOE,     60) // kept &tog here to make it possible to switch back to the DEF layer
     };
 
     behaviors {
@@ -125,38 +123,11 @@
             mods = <(MOD_LCTL)>;
         };
 
-       wvolbriu: windows_volume_brightness_up_on_control { // Chose WIN key to make it work with my own muscle memory here from macOS layers
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_BRI_UP>;
-
-            mods = <(MOD_LGUI)>;
-        };
-
-        wvolbrid: windows_volume_brightness_down_on_control { // Chose WIN key to make it work with my own muscle memory here from macOS layers
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp C_VOL_DN>, <&kp C_BRI_DN>;
-
-            mods = <(MOD_LGUI)>;
-        };
-
         // Swapper for Apple's CMD+TAB behavior
-
         swapper: swapper_for_apple_cmd_tab {
             compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
             #binding-cells = <0>;
             bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
-
-            ignored-key-positions = <7 16 17 18 9 19 30>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
-        };
-
-        // Swapper for Windows's ALT+TAB behavior
-
-        wswapper: swapper_for_windows_alt_tab {
-            compatible = "zmk,behavior-tri-state"; // requires tri-state module (https://github.com/urob/zmk-tri-state)
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
             ignored-key-positions = <7 16 17 18 9 19 30>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
         };
@@ -231,8 +202,6 @@
             tapping-term-ms = <200>; 
         };
         
-        #define C_NAV &moto NAV DEF // back to DEF on tap and NAV on hold (for mouse input processor on MOU and general movement on other toggled layers) 
-
     };
 
     macros {
@@ -293,28 +262,28 @@
           
         NUM {
             bindings = <
-        &none     &none    &none     &none    &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
-&trans  &none     &none    &none     &none    &none     &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT   &mt LA(BSPC) BSPC 
-                           &trans    C_NAV    &sk LGUI  &trans     &lt SYM N0  &trans
+        &none     &none    &none     &none         &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI      &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
+&trans  &none     &none    &none     &none         &mo FUNKY &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT   &mt LA(BSPC) BSPC 
+                           &trans    &moto NAV DEF &sk LGUI  &trans     &lt SYM N0  &trans
             >;
         };
 
         NAV {
             bindings = <
-        &kp TAB         &swapper  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT) &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
-        &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI    &kp LG(LBKT) &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)   &kp F18      &playnp    &kp F19   &volbrid  &volbriu   &kp DEL  &trans
-                                  &trans          C_NAV       &kp SPACE    &trans     &trans    &trans
+        &kp TAB         &swapper  &kp LS(LC(TAB)) &kp LC(TAB)   &kp LG(RBKT) &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
+        &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI      &kp LG(LBKT) &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
+&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)     &kp F18      &playnp    &kp F19   &volbrid  &volbriu   &kp DEL  &trans
+                                  &trans          &moto NAV DEF &kp SPACE    &trans     &trans    &trans
             >;
         };
 
         SYM {
             bindings = <
-        &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR   &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
-        &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE  &kp DOLLAR      &kp HASH  &sk RGUI  &sk LSHFT &sk RALT &sk RCTRL
-&trans  &mt GLOBE EQUAL &kp PLUS   &kp ASTRK  &kp FSLH   &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &trans
-                                   &trans     C_NAV      &mt RSHFT UNDER &kp UNDER &trans    &trans 
+        &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
+        &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR      &kp HASH  &sk RGUI  &sk LSHFT &sk RALT &sk RCTRL
+&trans  &mt GLOBE EQUAL &kp PLUS   &kp ASTRK  &kp FSLH  &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &trans
+                                   &trans     &trans    &mt RSHFT UNDER &kp UNDER &trans    &trans 
             >;
         };
 
@@ -327,12 +296,21 @@
             >;
         };
   
+        FUNKY {
+            bindings = <
+        &none     &none    &none     &none      &none     &none  &kp F7  &kp F8  &kp F9  &mt F10
+        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI   &none     &none  &kp F4  &kp F5  &kp F6  &kp F11
+&trans  &none     &none    &none     &none      &none     &none  &kp F1  &kp F2  &kp F3  &kp F12 &trans
+                           &trans    &trans     &sk LGUI  &trans &trans  &trans
+            >;
+        };
+
         MOU {
             bindings = <
-        &kp TAB         &kp LC(UP)  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
-        &kp LCTRL       &kp LALT    &kp LSHFT       &kp LGUI    &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
-&trans  &mt GLOBE UNDO  &kp LG(X)   &kp LG(C)       &kp LG(V)   &kp F11      &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
-                                    &trans          C_NAV       &kp SPACE    &mkp LCLK        &mkp RCLK       &trans
+        &kp TAB         &kp LC(UP)  &kp LS(LC(TAB)) &kp LC(TAB)   &kp LG(RBKT) &msc SCRL_DOWN   &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
+        &kp LCTRL       &kp LALT    &kp LSHFT       &kp LGUI      &kp LG(LBKT) &msc SCRL_UP     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &lt NAV ENTER
+&trans  &mt GLOBE UNDO  &kp LG(X)   &kp LG(C)       &kp LG(V)     &kp F11      &kp F18          &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL         &trans
+                                    &trans          &moto NAV DEF &kp SPACE    &mkp LCLK        &mkp RCLK       &trans
             >;          
         };
 
