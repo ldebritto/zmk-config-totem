@@ -299,7 +299,7 @@
         FUNKY {
             bindings = <
         &none     &none    &none     &none      &none     &none  &kp F7  &kp F8  &kp F9  &kp F10
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI   &none     &none  &kp F4  &kp F5  &kp F6  &kp F11
+        &sk LCTRL &sk LALT &sk LSHFT &none      &none     &none  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &none     &none    &none     &none      &none     &none  &kp F1  &kp F2  &kp F3  &kp F12 &trans
                            &trans    &trans     &sk LGUI  &trans &trans  &trans
             >;
@@ -314,7 +314,7 @@
             >;          
         };
 
-        AOE {
+        AOE_L {
             bindings = <
         &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
         &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
