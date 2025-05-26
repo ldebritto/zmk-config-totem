@@ -253,10 +253,10 @@
                 
         DEF {
             bindings = <
-                  &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y        &kp U         &kp I          &kp O         &kp P
-                  &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&mt LA(BSPC) BSPC &hrml GLOBE Z  &ltl NUM X    &ltl NUM C    &ltl NUM V   &kp B         &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &playnp
-                                               &none         &lc NAV      &kp RSHFT     &kp SPACE    &lc SYM       &none
+                    &ltl MOU Q     &kp W         &kp E         &kp R        &kp T         &kp Y        &kp U         &kp I          &kp O         &kp P
+                    &hrml LCTRL A  &hrml LALT S  &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&&mt LA(BSPC) BSPC  &hrml GLOBE Z  &kp X         &kp C         &ltl NUM V   &kp B         &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &mt LA(BSPC) BSPC
+                                                 &lc NUM       &lc NAV      &kp RSHFT     &kp SPACE    &lc SYM       &num_word NUM
             >;
         };
           
@@ -264,7 +264,7 @@
             bindings = <
         &none     &none    &none     &none         &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
         &sk LCTRL &sk LALT &sk LSHFT &sk LGUI      &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
-&trans  &none     &none    &none     &none         &mo FUNKY &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT   &mt LA(BSPC) BSPC 
+&trans  &none     &none    &none     &none         &mo FUNKY &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT    &mt LA(BSPC) BSPC 
                            &trans    &moto NAV DEF &sk LGUI  &trans     &lt SYM N0  &trans
             >;
         };
