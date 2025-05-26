@@ -19,8 +19,7 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
-// Customizing base behaviors
-
+// Customizing some base behaviors
 &sk {
     quick-release; // Avoids "THis" problem (double capitalization)
     release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
@@ -58,8 +57,8 @@
         COMBO(left_hr_enter,        &hrml LA(LS(LGUI)) ENTER,   11 12 13,    DEF     MOU AOE,   60)
         COMBO(left_hr_backspace,    &hrml LA(LGUI) BSPC,        11    13,    DEF     MOU AOE,   60)
   
-        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF NUM     AOE,   60)
-        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF NUM     AOE,   60)
+        COMBO(right_enter,          &hrml RA(LS(RGUI)) ENTER,   16 17 18,    DEF         AOE,   60)
+        COMBO(right_backspace,      &hrml RA(RGUI) BSPC,        16    18,    DEF         AOE,   60)
         
         // Layer toggles and other gimmickry
         COMBO(to_mou,               &tc MOU,                    22 23 24,    DEF MOU,           60)
