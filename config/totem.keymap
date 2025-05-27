@@ -72,7 +72,7 @@
             bindings = <
         &kp TAB         &swapper  &kp LS(LC(TAB)) &kp LC(TAB)   &kp LG(RBKT) &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp BSPC
         &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI      &kp LG(LBKT) &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET
-&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)     &kp F18      &playnp    &kp F19   &volbrid  &volbriu   &kp DEL  &trans
+&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)     &kp F18      &playnp    &kp F19   &vb_dn    &vb_up   &kp DEL  &trans
                                   &trans          &moto NAV DEF &kp SPACE    &trans     &trans    &trans
             >;
         };
