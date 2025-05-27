@@ -1,3 +1,8 @@
+#define LEFT_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25
+#define RIGHT_KEYS 5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31
+#define THUMBS 32 33 34 35 36 37
+#define SWAPPER_KEYS 7 16 17 18 9 19 30
+
 // Media controls
     playnp: play_next_previous_media_key { 
         compatible = "zmk,behavior-tap-dance";
@@ -32,7 +37,7 @@
         #binding-cells = <0>;
         bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 
-        ignored-key-positions = <7 16 17 18 9 19 29>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
+        ignored-key-positions = <SWAPPER_KEYS>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
     };
 
 // Layer-tap do escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
@@ -54,7 +59,7 @@
         bindings = <&kp>, <&kp>;
 
         #binding-cells = <2>;
-        hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+        hold-trigger-key-positions = <RIGHT_KEYS THUMBS>;
         flavor = "balanced";
         tapping-term-ms = <280>;
         hold-trigger-on-release;
@@ -70,7 +75,7 @@
         #binding-cells = <2>;
         flavor = "balanced";
         tapping-term-ms = <280>;
-        hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+        hold-trigger-key-positions = <LEFT_KEYS THUMBS>;
         hold-trigger-on-release;
         quick-tap-ms = <200>;
         require-prior-idle-ms = <200>;
@@ -84,7 +89,7 @@
         bindings = <&lc>, <&kp>;
 
         #binding-cells = <2>;
-        hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33>; // right-side + thumbs
+        hold-trigger-key-positions = <RIGHT_KEYS THUMBS>;
         flavor = "balanced";
         tapping-term-ms = <280>;
         hold-trigger-on-release;
@@ -98,7 +103,7 @@
         bindings = <&lc>, <&kp>;
 
         #binding-cells = <2>;
-        hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>; // left-side + thumbs
+        hold-trigger-key-positions = <LEFT_KEYS THUMBS>;
         flavor = "balanced";
         tapping-term-ms = <280>;
         hold-trigger-on-release;
