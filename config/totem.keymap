@@ -25,8 +25,7 @@
 / {
      combos {
         #include "features/combos.dtsi"                         // Same combos from Sweep, adapted in key positions numbers in Totem
-        
-        COMBO(togle_aoe_layer, &tog AOE, 20 10 11, DEF AOE, 60) // For AOE layers
+        #include "features/combos_aoe.dtsi"                     // AOE combos
     };
 
     behaviors {
