@@ -5,11 +5,11 @@
 
 // macOS layers
 #define DEF 0
-#define NUM 1 // must be bellow SYM and NAV to access keys on those layers
+#define NUM 1 
 #define NAV 2 // must be bellow MOU for input_processor to work
 #define SYM 3
 #define FUN 4
-#define MOU 5
+#define MOU 5 // also great for one-handed use with a mouse on the right hand
 
 // AOE layers
 #define AOE 6 // AOE 2 layers with easier access for default shortcuts on main layer
@@ -61,9 +61,9 @@
           
         NUM {
             bindings = <
-        &none     &none    &none     &none         &none     &kp LA(N6) &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
-        &sk LCTRL &sk LALT &sk LSHFT &sk LGUI      &none     &kp MINUS  &kp N4      &kp N5  &kp N6  &kp SLASH
-&trans  &none     &none    &none     &none         &mo FUNKY &kp COMMA  &kp N1      &kp N2  &kp N3  &kp DOT    &mt LA(BSPC) BSPC 
+        &ltl MOU TAB      &mt RBRC LBRC &mt RBKT LBKT &mt RPAR LPAR &kp PRCNT   &mt RPAR LPAR    &kp N7      &kp N8  &kp N9  &mt LA(N9) LA(N0)
+        &sk LCTRL         &sk LALT      &sk LSHFT     &sk LGUI      &kp DOLLAR  &mt PLUS MINUS   &kp N4      &kp N5  &kp N6  &mt ASTRK SLASH
+&trans  &mt GLOBE EQUAL   &kp PLUS      &kp ASTRK     &kp COLON     &kp AT      &mt TAB EQUAL    &kp N1      &kp N2  &kp N3  &mt COMMA DOT      &mt LA(BSPC) BSPC
                            &trans    &moto NAV DEF &sk LGUI  &trans     &lt SYM N0  &trans
             >;
         };
