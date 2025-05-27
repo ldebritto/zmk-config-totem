@@ -168,7 +168,7 @@
             require-prior-idle-ms = <175>;
         };
 
-        // Layer-tap do escape from MOU and NUM to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
+        // Layer-tap do escape from MOU to DEF on tap but still be able to use the NAV or SYM layers from the previous layers
         moto: mo_to_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "MTL";
@@ -249,7 +249,7 @@
             bindings = <
         &kp ESC         &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT       &kp AMPS  &kp RPAR  &kp RBKT  &kp RBRC &kp DQT
         &kp MINUS       &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR      &kp HASH  &sk RGUI  &sk LSHFT &sk RALT &sk RCTRL
-&trans  &mt GLOBE EQUAL &kp PLUS   &kp ASTRK  &kp FSLH  &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &trans
+&trans  &mt GLOBE PLUS  &kp EQUAL   &kp ASTRK  &kp FSLH  &kp AT          &kp PIPE  &kp BSLH  &kp QMARK &kp EXCL &kp COLON &trans
                                    &trans     &trans    &mt RSHFT UNDER &kp UNDER &trans    &trans 
             >;
         };
