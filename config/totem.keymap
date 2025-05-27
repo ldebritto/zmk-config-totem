@@ -1,9 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <behaviors/num_word.dtsi> // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>js
 
 // macOS layers
 #define DEF 0
@@ -19,33 +17,11 @@
 #define AGS 7
 #define ABS 8
 
-#include "features/mouse_settings.dtsi" // Requires layer defines above
-
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
-// Customizing base behaviors
-
-&sk {
-    quick-release; // Avoids "THis" problem (double capitalization)
-    release-after-ms = <86400000>; // Default is 1000 ms, raised to 1 day to emulate Callum's behavior that requires canceling on layer key.
-};
-
-&caps_word { 
-    /delete-property/ ignore-modifiers; // This voids pressing command+shift+s instead of a simple command+s
-    continue-list = <UNDERSCORE MINUS BACKSPACE DELETE K_CANCEL LSHFT LALT RALT SQT CARET TILDE GRAVE SLASH MINUS>; // K_CANCEL is for &lc macro, LSHFT is for PT-BR diacriticals on '^`~" keys, ALT is needed to enter alt characters
-    }; 
-
-&mt { flavor = "balanced"; };
-
-&num_word { // requires auto-layer module (https://github.com/urob/zmk-auto-layer)
-  continue-list = <
-    DOLLAR DOT COMMA SQT COLON
-    PLUS MINUS ASTRK SLASH EQUAL 
-    LPAR RPAR LBKT RBKT LBRC RBRC LT GT 
-    BSPC DEL ESC 
-    LCTRL LALT LSHFT LGUI
-    >;
-};
+#include "features/mouse_settings.dtsi"            // Requires layer defines above
+#include "features/core_behaviors_overrides.dtsi"  // Overrides for core behaviors such as &sk, &mt and &lt
+#include "features/num_word_settings.dtsi"         // Settings for &num_word and required remote include
 
 / {
      combos {
