@@ -114,7 +114,7 @@
             >;          
         };
 
-        AOE {
+        AOE2 {
             bindings = <
         &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
         &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
