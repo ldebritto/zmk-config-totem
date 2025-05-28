@@ -25,7 +25,7 @@
 / {
      combos {
         #include "features/combos.dtsi"                         // Same combos from Sweep, adapted in key positions numbers in Totem
-        #include "features/combos_aoe.dtsi"                     // AOE combos
+        #include "features/combos_aoe.dtsi"                     // AOE 2 combos
     };
 
     behaviors {
@@ -51,10 +51,10 @@
                 
         DEF {
             bindings = <
-        &ltl MOU Q     &kp W           &kp E         &kp R        &kp T         &kp Y        &kp U         &kp I          &kp O         &kp P
-        &hrml LCTRL A  &hrml LALT S    &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&none   &hrml GLOBE Z  &kp X           &kp C         &ltl NUM V   &kp B         &kp N        &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
-                                       &lc NUM       &lc NAV      &kp RSHFT     &kp SPACE    &lc SYM       &num_word NUM
+        &ltl MOU Q     &kp W           &kp E         &kp R         &kp T         &kp Y        &kp U        &kp I          &kp O         &kp P
+        &hrml LCTRL A  &hrml LALT S    &hrml LSHFT D &hrml LGUI F  &ltl NUM G    &kp H        &hrmr RGUI J &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&kp F16 &hrml GLOBE Z  &kp X           &kp C         &hrml GLOBE V &kp B         &kp N        &hrmr HYPR M &kp COMMA      &kp DOT       &kp SEMI        &kp F17
+                                       &lc NUM       &lc NAV       &kp RSHFT     &kp SPACE    &lc SYM      &num_word NUM
             >;
         };
           
