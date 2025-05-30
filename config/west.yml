@@ -14,9 +14,6 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-    - name: zmk-helpers
-      remote: urob
-      revision: main    
     - name: zmk-tri-state
       remote: urob
       revision: main
