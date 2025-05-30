@@ -17,18 +17,19 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
+#include "features/totem_keypos.dtsi"              // Totem key positions, but using same as 34key naming convention to make code reusable for Sweep
 #include "features/mouse_settings.dtsi"            // Requires layer defines above
 #include "features/core_behaviors_overrides.dtsi"  // Overrides for core behaviors such as &sk, &mt and &lt
 #include "features/num_word_settings.dtsi"         // Settings for &num_word and required remote include
 
 / {
      combos {
-        #include "features/combos.dtsi"                         // Same combos from Sweep, adapted in key positions numbers in Totem
-        #include "features/combos_aoe.dtsi"                     // AOE combos
+        #include "features/combos.dtsi"                         // Very same combos from Sweep
+        #include "features/combos_aoe.dtsi"                     // AOE combos are placed in a file apart as they're not used in Sweep
     };
 
     behaviors {
-        #include "features/custom_behaviors.dtsi"               // Same behaviors from Sweep, adapted for key positions numbers in Totem
+        #include "features/custom_behaviors.dtsi"               // Very same behaviors from Sweep
     };
 
     macros {
