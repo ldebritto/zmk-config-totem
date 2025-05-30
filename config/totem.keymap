@@ -17,6 +17,7 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
+#include "zmk-helpers/helper.h"
 #include "features/totem_keypos.h"              // Totem key positions, but using same as 34key naming convention to make code reusable for Sweep
 #include "features/mouse_settings.dtsi"            // Requires layer defines above
 #include "features/core_behaviors_overrides.dtsi"  // Overrides for core behaviors such as &sk, &mt and &lt
