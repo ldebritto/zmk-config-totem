@@ -12,6 +12,8 @@
 // OLK  LB0   LB1   LB2   LB3   LB4             RB0  RB1   RB2   RB3   RB4  ROK
 //                        LOT   LIT  LHT   RHT  RIT  ROT
 
+#pragma once
+
 // Left top keys
 #define LT0 0
 #define LT1 1
