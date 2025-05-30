@@ -2,6 +2,7 @@
 #define LEFT_SIDE_KEYS LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
 #define RIGHT_SIDE_KEYS RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
 #define THUMB_KEYS LIT LHT RHT RIT
+#define SWAPPER_IGNORED_KEYS RT2 RM1 RM2 RM3 RT4 RM4 RB4 // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls                             // Arrows and BSPC, ENTER and DEL used for alt-tab functionality on macos
 
 // Media controls
     playnp: play_next_previous_media_key { 
@@ -37,7 +38,7 @@
         #binding-cells = <0>;
         bindings = <&kt RGUI>, <&kp TAB>, <&kt RGUI>;
 
-        ignored-key-positions = <RT2 RM1 RM2 RM3 RT4 RM4 RB4>; // Arrows and BSPC, ENTER and DEL for alt-tab movement and window/app controls
+        ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
     };
 
 // Layer-tap do escape from any layer to DEF on tap but still be able to reach the NAV layer on hold, useful for cancelling toggles
