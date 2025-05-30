@@ -1,3 +1,5 @@
+#include "features/totem_keypos.dtsi"
+
 COMBO(toggle_aoe_layer,     &tog AOE,                   OLK LM0 LM1,   DEF AOE, 60)
 
 COMBO(aoe_left_esc,         &kp ESCAPE,                 LT1 LT2 LT3,       AOE, 60)
