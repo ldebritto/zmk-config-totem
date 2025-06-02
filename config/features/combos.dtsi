@@ -1,9 +1,5 @@
 compatible = "zmk,combos";
 
-// Timeouts
-#define SHORT_COMBO_TIMEOUT 60       // Default timeout for combos in ms
-#define LONG_COMBO_TIMEOUT 100 // Default timeout for combos in ms
-
 // Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
 #define COMBO(NAME,         BINDINGS,                   KEYPOS,         LAYERS,    TERM) \
 combo_##NAME { \
@@ -11,7 +7,7 @@ combo_##NAME { \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
-    require-prior-idle-ms = <200>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>; \
 };
 
 // These make the keyboard more accessible for one-handed use and to avoid the need to hold layer keys for very long

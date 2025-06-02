@@ -17,7 +17,10 @@
 
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
-#include "features/totem_keypos.h"                  // Totem key positions, but using same as 34key naming convention to make code reusable for Sweep
+// These includes allow for easier maintenance and readability between different keymaps
+#include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
+#include "features/timings.h"                       // Timing definitions for hold-tap and combos
+
 #include "features/core_behaviors_overrides.dtsi"   // Overrides for core behaviors such as &sk, &mt and &lt
 #include "features/mouse.dtsi"                      // Requires layer defines above
 #include "features/num_word.dtsi"                   // Settings for &num_word and required remote include
