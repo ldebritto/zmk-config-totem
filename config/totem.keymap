@@ -18,7 +18,7 @@
 #define HYPR LG(LS(LC(LALT))) // HYPR key
 
 // These includes allow for easier maintenance and readability between different keymaps
-#include "features/sweep_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
+#include "features/totem_keypos.h"                  // Key positions naming scheme for 34 keys keymaps
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
 
 #include "features/core_behaviors_overrides.dtsi"   // Overrides for core behaviors such as &sk, &mt and &lt
