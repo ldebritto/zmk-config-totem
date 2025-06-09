@@ -11,6 +11,8 @@
 //      LM0   LM1   LM2   LM3   LM4             RM0  RM1   RM2   RM3   RM4
 // OLK  LB0   LB1   LB2   LB3   LB4             RB0  RB1   RB2   RB3   RB4  ROK
 //                        LOT   LIT  LHT   RHT  RIT  ROT
+//
+// Using these key codes instead fo their numbers will allow to use the same code between Sweep and Totem regardless of the different key numbers for each keyboard.
 
 #pragma once
 
