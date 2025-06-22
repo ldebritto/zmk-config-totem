@@ -17,10 +17,10 @@ COMBO(at,             &kp AT,                   LT1 LM1,      DEF,      SHORT_CO
 COMBO(hash,           &kp HASH,                 LT2 LM2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(dollar,         &kp DOLLAR,               LT3 LM3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(percent,        &kp PRCNT,                LT4 LM4,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(circ,           &kp CARET,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(plus,           &kp PLUS,                 RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(asterisk,       &kp ASTRK,                RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(ampersand,      &kp AMPS,                 RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(circ,           &kp CARET,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(plus,           &kp PLUS,                 RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(asterisk,       &kp ASTRK,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(ampersand,      &kp AMPS,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Vertical bottom symbol combos
 COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_COMBO_TIMEOUT)
