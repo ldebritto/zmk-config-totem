@@ -1,0 +1,51 @@
+compatible = "zmk,combos";
+
+// Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
+#define COMBO(NAME,         BINDINGS,                   KEYPOS,         LAYERS,    TERM) \
+combo_##NAME { \
+    timeout-ms = <TERM>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>; \
+};
+
+// Recreating urob combos from https://github.com/urob/zmk-config
+
+// Vertical top symbol combos
+COMBO(at,             &kp AT,                   LT1 LM1,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(hash,           &kp HASH,                 LT2 LM2,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(dollar,         &kp DOLLAR,               LT3 LM3,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(percent,        &kp PRCNT,                LT4 LM4,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(circ,           &kp CARET,                LT5 LM5,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(plus,           &kp PLUS,                 LT6 LM6,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(asterisk,       &kp ASTRK,                LT7 LM7,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(ampersand,      &kp AMPS,                 LT8 LM8,      DEF,      SHORT_COMBO_TIMEOUT) 
+
+// Vertical bottom symbol combos
+COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(equal,          &kp EQUAL,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(tilde,          &kp TILDE,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(underscore,     &kp UNDER,                LM5 LB5,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(minus,          &kp MINUS,                LM6 LB6,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(slash,          &kp SLASH,                LM7 LB7,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(pipe,           &kp PIPE,                 LM8 LB8,      DEF,      SHORT_COMBO_TIMEOUT) 
+
+// Horizontal left combos
+COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(tab,           &hrml LA(LSHFT) TAB,       LM1 LM2,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(copy,          &kp LG(C),                 LB1 LB2,      DEF,      SHORT_COMBO_TIMEOUT) 
+
+COMBO(mouse,         &tc MOU,                   LT2 LT3,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(leader,        &hrml LG(LSHFT) F17,       LM2 LM3,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(paste,         &kp LG(V),                 LB2 LB3,      DEF,      SHORT_COMBO_TIMEOUT) 
+
+// Horizontal right combos
+COMBO(bspc,          &kp BSPC,                  LT6 LT7,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(open_par,      &hrmr RG(LSHFT) LPAR,      LM6 LM7,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(open_brc,      &kp LBRC,                  LB6 LB7,      DEF,      SHORT_COMBO_TIMEOUT) 
+
+COMBO(del,           &kp BSPC,                  LT7 LT8,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(open_par,      &hrmr RA(LSHFT) RPAR,      LM7 LM8,      DEF,      SHORT_COMBO_TIMEOUT) 
+COMBO(open_brc,      &kp RBRC,                  LB7 LB8,      DEF,      SHORT_COMBO_TIMEOUT) 
