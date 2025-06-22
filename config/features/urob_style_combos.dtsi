@@ -27,10 +27,10 @@ COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_CO
 COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(equal,          &kp EQUAL,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(tilde,          &kp TILDE,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(underscore,     &kp UNDER,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(minus,          &kp MINUS,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(slash,          &kp SLASH,                RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(pipe,           &kp PIPE,                 RT4 RM4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(underscore,     &kp UNDER,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(minus,          &kp MINUS,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(slash,          &kp SLASH,                RT2 RM2,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(pipe,           &kp PIPE,                 RT3 RM3,      DEF,      SHORT_COMBO_TIMEOUT)
 
 // Horizontal left combos
 COMBO(esc,           &kp ESC,                   LT1 LT2,      DEF,      SHORT_COMBO_TIMEOUT)
