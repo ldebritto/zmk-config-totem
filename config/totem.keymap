@@ -28,7 +28,6 @@
 / {
      combos {
         #include "features/combos.dtsi"              // Very same combos from Sweep
-        #include "features/urob_style_combos.dtsi"   // Experimenting with urob combos
     };
 
     behaviors {
