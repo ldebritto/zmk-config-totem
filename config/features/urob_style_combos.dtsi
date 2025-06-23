@@ -29,8 +29,8 @@ COMBO(ordo,           &mt LA(9) LA(0),          RT4 RM4,      DEF,      SHORT_CO
 COMBO(question,       &kp QMARK,                LM0 LB0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(grave,          &kp GRAVE,                LM1 LB1,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(backslash,      &kp BSLH,                 LM2 LB2,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(equal,          &kp EQUAL,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
-COMBO(tilde,          &kp TILDE,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(tilde,          &kp TILDE,                LM3 LB3,      DEF,      SHORT_COMBO_TIMEOUT)
+COMBO(equal,          &kp EQUAL,                LM4 LB4,      DEF,      SHORT_COMBO_TIMEOUT)
 
 COMBO(underscore,     &kp UNDER,                RT0 RM0,      DEF,      SHORT_COMBO_TIMEOUT)
 COMBO(minus,          &kp MINUS,                RT1 RM1,      DEF,      SHORT_COMBO_TIMEOUT)
