@@ -27,16 +27,3 @@
                 <&macro_press>,
                 <&to MACRO_PLACEHOLDER>;
         };
-
-        key_def: move_to_def_after_key_tap {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "tog_layer/cancel";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings =
-                <&macro_tap>,
-                <&kp K_CANCEL &macro_param_1to1>,
-                <&to DEF>,
-                <&kp MACRO_PLACEHOLDER>;
-        };
