@@ -18,7 +18,8 @@
 #define HYPR LG(LS(LC(LALT))) // shorthand for HYPER key hold-tap on G and H keys
 
 // These includes allow for easier maintenance and readability between different keymaps
-#include "features/totem_keypos.h"                  // Key positions naming scheme for 34 keys keymaps (this is keyboard specific, but makes the rest keyboard agnostic)
+#include "features/totem_keypos.h"                  // Key positions naming scheme for 34 keys keymaps (this is keyboard specific, but makes the rest of the includes keyboard agnostic)
+
 // Features and customizations (these files are shared with Sweep repo)
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
 #include "features/core_behaviors_overrides.dtsi"   // Overrides for core behaviors such as &sk, &mt and &lt
