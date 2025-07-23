@@ -53,7 +53,7 @@
     mou_expose: expose_on_tap_close_window_on_lcmd {
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
-        bindings = <&kp LC(PG_UP)>, <&kp LG(W)>;
+        bindings = <&kp LC(UP)>, <&kp LG(W)>;
         mods = <(MOD_LGUI)>;
     };
 
