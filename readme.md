@@ -74,7 +74,7 @@ Full list in the `features/combos.dtsi` wich use a [macro](https://github.com/kk
 
 This allows for `CMD+TAB` with one key from `NAV`. It will simulate holding `CMD` between `TAB` keypresses for as long as you keep the `&lc NAV` key held.
 
-## 7. Mouse layer
+## 7. Mouse layer (`MOU`)
 
 While I still use the mouse/trackpad when it's the best tool for the job, I created a `MOU` layer that can be entered either by holding `Q` or toggled by hitting `QWERT` combo. So many times, using an app like [Homerow](https://www.homerow.app/), [Vimium](https://vimium.github.io/) on Chrome or [Vimlike](https://www.jasminestudios.net/vimlike/) on Safari is enough to avoid the mouse for the random click. 
 
