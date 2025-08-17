@@ -54,10 +54,10 @@
                 
         DEF {
             bindings = <
-        &ltl MOU Q     &kp W        &kp E         &ltl NUM R   &kp T         &kp Y          &kp U         &kp I          &kp O         &kp P
-        &hrml LCTRL A  &hrml LALT S &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H   &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&none   &hrml GLOBE Z  &kp X        &kp C         &ltl MOU V   &kp B         &kp N          &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
-                                    &none         SMART_SHIFT  SMART_SHIFT   &blt SYM SPACE &blt SYM SPACE       &none
+        &ltl MOU Q     &kp W        &kp E         &ltl NUM R   &kp T         &kp Y         &kp U         &kp I          &kp O         &kp P
+        &hrml LCTRL A  &hrml LALT S &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
+&none   &hrml GLOBE Z  &kp X        &kp C         &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
+                                    &none         SMART_SHIFT  SMART_SHIFT   &mt RSHFT SPC &lc SYM       &none
             >;
         };
           
@@ -111,7 +111,7 @@
             bindings = <
         &kp Q        &kp W      &kp E       &kp R        &kp T        &trans  &trans  &trans  &trans  &trans
         &mt LCTRL A  &mt LALT S &mt LSHFT D &mt LCTRL F  &kp G        &trans  &trans  &trans  &trans  &trans
-&none   &kp Z        &kp X      &kp C       &kp V        &kp B        &trans  &trans  &trans  &trans  &trans  &none
+&none   &kp Z        &kp X      &kp C       &kp V        &lt ABS B    &trans  &trans  &trans  &trans  &trans  &none
                                 &none       &lt AGS H    &lt ABS DOT  &trans  &trans  &none
             >;
         };
@@ -120,7 +120,7 @@
             bindings = <
         &kp N1        &kp N2       &kp N3       &kp N4        &kp N5     &trans     &trans  &trans  &trans  &kp BSPC
         &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp N0     &trans     &trans  &trans  &trans  &kp ENTER
-&none   &none         &none        &glhf        &laugh        &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3      &none
+&none   &kp DEL       &laugh       &glhf        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3      &none
                                    &none        &trans        &kp DEL    &trans     &trans  &none
             >;
         };
@@ -130,7 +130,7 @@
         &kp LC(LS(M))   &kp LC(LS(S))   &kp LC(LS(U))   &kp LC(LS(Y))   &kp LS(COMMA)    &trans  &trans  &trans  &trans  &trans
         &kp LC(LS(A))   &kp LC(LS(L))   &kp LC(LS(B))   &kp LC(LS(K))   &kp LS(LC(D))    &trans  &trans  &trans  &trans  &trans
 &none   &kp LC(LS(Z))   &kp LC(LS(I))   &kp LC(LS(G))   &kp LC(LS(V))   &kp LC(LS(H))    &trans  &trans  &trans  &trans  &trans &none
-                                        &none           &trans          &trans           &trans  &trans  &none
+                                        &none           &kp DEL         &trans           &trans  &trans  &none
             >;
         };
   };

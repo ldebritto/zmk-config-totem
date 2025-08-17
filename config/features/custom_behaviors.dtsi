@@ -144,7 +144,6 @@
         #binding-cells = <2>;
         flavor = "balanced";
         tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
     };
 
