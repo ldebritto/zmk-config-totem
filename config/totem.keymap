@@ -37,6 +37,7 @@
 
     macros {
         #include "features/layer_cancel_macros.dtsi" // Layer change behaviors with and embeded cancel to absorb unused queued mods
+        #include "features/typing_macros.dtsi"       // Typing macros for common words and phrases
         #include "features/aoe_chat_macros.dtsi" // AOE chat macros for easier access to common chat commands
     };
 
@@ -57,16 +58,16 @@
         &ltl MOU Q     &kp W        &kp E         &ltl NUM R   &kp T         &kp Y         &kp U         &kp I          &kp O         &kp P
         &hrml LCTRL A  &hrml LALT S &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
 &none   &hrml GLOBE Z  &kp X        &kp C         &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
-                                    &none         SMART_SHIFT  SMART_SHIFT   &mt RSHFT SPC &lc SYM       &none
+                                    &none         &lc NAV      &kp RSHFT     &kp SPACE     &lc SYM       &none
             >;
         };
           
         NUM {
             bindings = <
-        &trans    &trans  &trans  &trans   &trans  &kp PLUS    &kp N7  &kp N8  &kp N9  &kp ASTRK
+        &trans    &trans  &trans  &reais   &trans  &kp PLUS    &kp N7  &kp N8  &kp N9  &kp ASTRK
         &trans    &trans  &trans  &trans   &trans  &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
 &trans  &trans    &trans  &trans  &trans   &trans  &kp DOT     &kp N1  &kp N2  &kp N3  &kp COMMA  &trans
-                          &trans  &defnav  &trans  &trans      &lt SYM N0  &trans
+                          &trans  &defnav  &trans  &num_spc    &lt SYM N0  &trans
             >;
         };
 
@@ -85,7 +86,7 @@
         &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS  &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
         &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &trans  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &kp PIPE  &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON  &trans
-                                     &trans     &lc NAV   &mt RSHFT UNDER   &kp SPACE &lc SYM   &trans 
+                                     &none      &lc NAV   &mt RSHFT UNDER   &kp UNDER &lc SYM   &none 
             >;
         };
 
@@ -94,7 +95,7 @@
         &kp N1     &kp N2    &kp N3     &kp N4    &kp N5        &kp N6   &kp N7    &kp N8     &kp N9    &kp N0
         &sk LCTRL  &sk LALT  &sk LSHFT  &sk LGUI  &kp F11       &kp F12  &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &trans  &kp F1     &kp F2    &kp F3     &kp F4    &kp F5        &kp F6   &kp F7    &kp F8     &kp F9    &kp F10   &trans
-                             &trans     &lc NAV   &kp C_POWER   &kp CAPS &lc SYM   &trans
+                             &none      &lc NAV   &kp C_POWER   &kp CAPS &lc SYM   &none
             >;
         };
 
