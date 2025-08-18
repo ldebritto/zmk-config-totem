@@ -24,7 +24,7 @@
 #include "features/timings.h"                       // Timing definitions for hold-tap and combos
 #include "features/core_behaviors_overrides.dtsi"   // Overrides for core behaviors such as &sk, &mt and &lt
 #include "features/mouse.dtsi"                      // Requires layer defines above
-#include "features/num_word.dtsi"                   // Settings for &num_word and required remote include
+// #include "features/num_word.dtsi"                   // Settings for &num_word and required remote include
 
 / {
      combos {
@@ -64,10 +64,10 @@
           
         NUM {
             bindings = <
-        &trans    &trans  &trans  &reais   &trans  &kp ASTRK   &kp N7  &kp N8  &kp N9  &kp PLUS
-        &trans    &trans  &trans  &trans   &trans  &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
-&trans  &trans    &trans  &trans  &trans   &trans  &kp DOT     &kp N1  &kp N2  &kp N3  &kp COMMA  &trans
-                          &trans  &defnav  &trans  &num_spc    &lt SYM N0  &trans
+        &none     &none     &reais      &none       &none      &kp ASTRK   &kp N7  &kp N8  &kp N9  &kp PLUS
+        &sk LCTRL &sk LALT  &sk LSHFT   &sk LGUI    &none      &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
+&trans  &none     &none     &none       &none       &none      &kp DOT     &kp N1  &kp N2  &kp N3  &kp COMMA  &trans
+                            &trans      &defnav     &num_shift &num_spc    &lt SYM N0  &trans
             >;
         };
 
