@@ -121,7 +121,7 @@
             bindings = <
         &kp N1        &kp N2       &kp N3       &kp N4        &kp N5     &trans     &trans  &trans  &trans  &kp BSPC
         &mt LCTRL N6  &mt LALT N7  &mt LSHFT N8 &mt LCTRL N9  &kp N0     &trans     &trans  &trans  &trans  &kp ENTER
-&none   &kp DEL       &laugh       &glhf        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3      &none
+&none   &none         &laugh       &glhf        &kp DOT       &kp COMMA  &kp C_MUTE &trans  &vb_dn  &vb_up  &kp F3      &none
                                    &none        &trans        &kp DEL    &trans     &trans  &none
             >;
         };
