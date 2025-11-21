@@ -58,10 +58,10 @@
           
         NUM {
             bindings = <
-        &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6)  &kp PLUS    &kp N7      &kp N8  &kp N9  &kp ASTRK
+        &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6) &kp PLUS    &kp N7      &kp N8  &kp N9  &kp ASTRK
         &sk LCTRL  &sk LALT   &sk LSHFT   &sk LGUI    &sk RSHFT  &kp MINUS   &kp N4      &kp N5  &kp N6  &kp SLASH
 &trans  &none      &none      &none       &none       &sk RSHFT  &kp COMMA   &kp N1      &kp N2  &kp N3  &kp DOT   &trans
-                              &trans      &defnav     &sk RSHFT  &trans      &lt SYM N0  &trans
+                              &trans      &defnav     &sk RSHFT  &num_spc    &lt SYM N0  &trans
             >;
         };
 
