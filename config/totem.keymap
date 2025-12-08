@@ -28,7 +28,7 @@
     behaviors {
         #include "features/custom_behaviors.dtsi"    // Very same behaviors from Sweep
     };
-
+z
     macros {
         #include "features/layer_cancel_macros.dtsi" // Layer change behaviors with and embeded cancel to absorb unused queued mods
         #include "features/typing_macros.dtsi"       // Typing macros for common words and phrases
@@ -50,17 +50,17 @@
             bindings = <
         &kp Q          &kp W        &kp E         &kp R        &kp T         &kp Y         &kp U         &kp I          &kp O         &kp P
         &hrml LCTRL A  &hrml LALT S &hrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H  &hrmr RGUI J  &hrmr LSHFT K  &hrmr RALT L  &hrmr RCTRL SQT
-&none   &hrml GLOBE Z  &kp X        &ltl NUM C    &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
-                                    &none         &lc NAV      &kp RSHFT     &kp SPACE     &lc SYM       &none
+&to DEF &hrml GLOBE Z  &kp X        &ltl NUM C    &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &to DEF
+                                    &none         &lc NAV      &kp RSHFT     &kp SPC       &lc SYM       &none
             >;
         };
           
         NUM {
             bindings = <
-        &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6) &kp PLUS    &kp N7      &kp N8  &kp N9  &kp ASTRK
-        &sk LCTRL  &sk LALT   &sk LSHFT   &sk LGUI    &sk RSHFT  &kp MINUS   &kp N4      &kp N5  &kp N6  &kp SLASH
-&trans  &none      &none      &none       &none       &sk RSHFT  &kp COMMA   &kp N1      &kp N2  &kp N3  &kp DOT   &trans
-                              &trans      &defnav     &sk RSHFT  &num_spc    &lt SYM N0  &trans
+        &kp LA(N9) &kp LA(N0) &none       &reais      &kp LA(N6)  &kp PLUS    &kp N7  &kp N8  &kp N9  &kp ASTRK
+        &sk LCTRL  &sk LALT   &sk LSHFT   &sk LGUI    &sk LSHFT   &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SLASH
+&trans  &none      &none      &none       &comma00    &triple0    &kp COMMA   &kp N1  &kp N2  &kp N3  &kp DOT   &trans
+                              &trans      &trans      &tc NUM     &trans      &lt SYM N0  &trans
             >;
         };
 
@@ -68,8 +68,8 @@
             bindings = <
         &kp TAB         &swapper  &kp LS(LC(TAB)) &kp LC(TAB)   &kp LG(RBKT)    &kp PG_UP  &kp HOME &kp UP    &kp END   &kp BSPC
         &sk LCTRL       &sk LALT  &sk LSHFT       &sk LGUI      &kp LG(LBKT)    &kp PG_DN  &kp LEFT &kp DOWN  &kp RIGHT &kp RET
-&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)     &lt SYM F18     &playnp    &kp F19  &vb_dn    &vb_up    &kp DEL &trans
-                                  &none           &lc NAV       &kp RSHFT       &kp SPACE  &lc SYM       &none
+&trans  &mt GLOBE LG(Z) &kp LG(X) &kp LG(C)       &kp LG(V)     &kp F18         &playnp    &kp F19  &vb_dn    &vb_up    &kp DEL &trans
+                                  &none           &trans        &tc NAV         &trans     &lc SYM       &none
 
             >;
         };
@@ -79,7 +79,7 @@
         &kp ESC           &kp LBRC   &kp LBKT   &kp LPAR  &kp PRCNT         &kp AMPS   &kp RPAR  &kp RBKT   &kp RBRC  &kp DQT
         &kp MINUS         &kp CARET  &kp GRAVE  &kp TILDE &kp DOLLAR        &kp HASH   &sk RGUI  &sk LSHFT  &sk RALT  &sk RCTRL
 &trans  &mt GLOBE PLUS    &kp EQUAL  &kp ASTRK  &kp FSLH  &kp AT            &lt NAV PIPE   &kp BSLH  &kp QMARK  &kp EXCL  &kp COLON  &trans
-                                     &none      &lc NAV   &mt RSHFT UNDER   &kp SPACE  &lc SYM   &none
+                                     &none      &lc NAV   &mt RSHFT UNDER   &kp SPC    &lc SYM   &none
             >;
         };
 
@@ -97,9 +97,8 @@
         &desktop_quit   &expose_close &kp LC(LS(TAB)) &kp LC(TAB)   &kp LG(RBKT)  &msc SCRL_DOWN  &msc SCRL_RIGHT &mmv MOVE_UP    &msc SCRL_LEFT  &kp BSPC
         &kp LCTRL       &kp LALT      &kp LSHFT       &kp LGUI      &kp LG(LBKT)  &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &kp ENTER
 &trans  &mt GLOBE LG(Z) &kp LG(X)     &kp LG(C)       &kp LG(V)     &kp F18       &kp LG(LS(N4))  &mkp MCLK       &mkp MB4        &mkp MB5        &kp DEL        &trans
-                                      &trans          &defnav       &mt LGUI SPC  &mkp LCLK       &mkp RCLK       &trans     
+                                      &trans          &tc MOU       &mt LGUI SPC  &mkp LCLK       &mkp RCLK       &trans     
             >;          
-        };        
-
+        };
   };
 };
