@@ -28,7 +28,7 @@
     behaviors {
         #include "features/custom_behaviors.dtsi"    // Very same behaviors from Sweep
     };
-z
+
     macros {
         #include "features/layer_cancel_macros.dtsi" // Layer change behaviors with and embeded cancel to absorb unused queued mods
         #include "features/typing_macros.dtsi"       // Typing macros for common words and phrases
