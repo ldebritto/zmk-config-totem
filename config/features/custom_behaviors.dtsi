@@ -48,6 +48,33 @@
         ignored-key-positions = <SWAPPER_IGNORED_KEYS>;
     };
 
+    // These behaviors extend the swapper to allow quitting and hiding apps from the native macOS app switcher
+
+    swdel: swapper_with_del_to_quit_app { // Q will quit an app from the native macOS app switcher
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp DEL>, <&kp Q>;
+
+        mods = <(MOD_RGUI)>; // RGUI is triggered by the swapper behavior
+    };
+
+    swenter: swapper_with_enter_to_hide_window { // H will quit an app from the native macOS app switcher
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp ENTER>, <&kp H>; // RGUI is triggered by the swapper behavior
+
+        mods = <(MOD_RGUI)>;
+    };
+    
+    swbspc: swapper_with_enter_to_hide_window { // H will quit an app from the native macOS app switcher
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp BSPC>, <&kp W>; // RGUI is triggered by the swapper behavior
+
+        mods = <(MOD_RGUI)>;
+    };
+
+
 // mou mod-morphs to allow closing windows and quitting apps from MOU
 
     expose_close: expose_on_tap_close_window_on_lcmd {
