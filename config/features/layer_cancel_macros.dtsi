@@ -47,7 +47,7 @@ num_shift_macro: num_shift_macro { // Moves to DEF before sending RSHIFT on hold
         <&macro_tap &to DEF>,
         <&macro_press &kp RSHFT>,
         <&macro_pause_for_release>,
-        <&macro_release>
+        <&macro_release>,
         <&kp RSHFT>;
 };
 
