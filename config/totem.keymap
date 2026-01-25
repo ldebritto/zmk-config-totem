@@ -25,7 +25,7 @@
 #include "features/core_behaviors_overrides.dtsi"   // Overrides for core behaviors such as &sk, &mt and &lt
 #include "features/mouse.dtsi"                      // Requires layer defines above
 
-// #include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
+#include "features/num_word.dtsi"                   // Custom behaviors like swapper and desktop quit
 
 / {
      combos {

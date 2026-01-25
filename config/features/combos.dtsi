@@ -23,7 +23,7 @@ COMBO(right_backspace,      &hrmr LA(LGUI) BSPC,        RM1     RM3,      DEF NU
 
 // Layer toggles and system functionality
 COMBO(tog_caps_word,        &caps_word,                 LM2 RM2,          DEF,                          SHORT_COMBO_TIMEOUT) // home shift positions
-// COMBO(num_word,             &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
+COMBO(num_word,             &num_word NUM,              RM2 RIT,          DEF NUM,                      SHORT_COMBO_TIMEOUT) // deactivates on SPACE or other keycodes that are not on the continue-list
 
 // NUM-only combos vertical combos
 COMBO(num_open_par,         &kp LPAR,                   RM1 RT1,          NUM,                          SHORT_COMBO_TIMEOUT) // (
