@@ -90,7 +90,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     hrmr: hrmr { // urob's home row mods right
@@ -104,7 +104,7 @@
         hold-trigger-key-positions = <LEFT_SIDE_KEYS THUMB_KEYS>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
 
@@ -149,7 +149,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     ltr: better_layer_tap_right { // urob's logic but for a layer-tap on right hand
@@ -163,7 +163,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     blt: better_layer_tap { // urob's logic but for a layer-tap on right hand
@@ -188,7 +188,7 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
 
     kptcr: toggle_layer_on_tap_right { // urob's logic but for a layer-tap on right hand
@@ -202,31 +202,5 @@
         tapping-term-ms = <HOLD_TAP_TERM>;
         hold-trigger-on-release;
         quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
+        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
     };
-
-    num_shift: num_shift { // &tc NUM on tap and &to DEF + &kp RSHIFT on hold so I can capitalize myself out of &num_word or &tc NUM (useful for starting a new field on a form)
-        compatible = "zmk,behavior-hold-tap";
-        label = "NUM_SHIFT";
-        bindings = <&num_shift_macro>, <&tc>;
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
-        quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
-    };
-    #define NUMSHIFT &num_shift 0 NUM
-
-    cl: def_on_tap_mo_layer_on_hold {
-      compatible = "zmk,behavior-hold-tap";
-        label = "CANCEL_LAYER";
-        bindings = <&mo>, <&to>;
-        #binding-cells = <2>;
-        flavor = "balanced";
-        tapping-term-ms = <HOLD_TAP_TERM>;
-        hold-trigger-on-release;
-        quick-tap-ms = <QUICK_TAP>;
-        require-prior-idle-ms = <HOLD_REQUIRE_PRIOR_IDLE>;
-    };
-    #define NUMNAV &cl NAV DEF
