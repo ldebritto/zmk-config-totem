@@ -1,0 +1,14 @@
+compatible = "zmk,combos";
+
+// Shorthand combo synthax copied from https://github.com/kkga/zmk-config/blob/master/config/combos.dtsi
+#define COMBO(NAME,         BINDINGS,                   KEYPOS,         LAYERS,    TERM) \
+combo_##NAME { \
+    timeout-ms = <TERM>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+};
+
+COMBO(circ,     &kp CARET,   RIT LM1,      DEF,      COMBO_TIMEOUT) // ESC is the only combo that moves to NAV since there's no ESC key there
+COMBO(grave,    &kp GRAVE,   RIT LM2,      DEF,      COMBO_TIMEOUT) // MOU gets this since its TAB key position untoggles the layer
+COMBO(tilde,    &kp TILDE,   RIT LM3,      DEF,      COMBO_TIMEOUT) // MOU gets this since there's no ENTER key assigned in the left hand

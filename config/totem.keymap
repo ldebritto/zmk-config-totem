@@ -30,6 +30,7 @@
 / {
      combos {
         #include "features/combos.dtsi"              // Very same combos from Sweep
+        #include "features/anachron_combos.dtsi"      // Combos that are only used in Anachron and not in Sweep, to avoid adding mouse layer combos to Sweep keymap
     };
 
     behaviors {
