@@ -57,14 +57,14 @@ COMBO(aoe_right_tab,        &kp TAB,                    RT1     RT3,            
 COMBO(aoe_right_enter,      &hrmr RA(LS(RCTRL)) ENTER,  RM1 RM2 RM3,                               AOE, COMBO_TIMEOUT) 
 COMBO(aoe_right_backspace,  &hrmr LA(LCTRL) BSPC,       RM1     RM3,                               AOE, COMBO_TIMEOUT)
 
-#define ANACHRON_COMBO(NAME, BINDINGS, KEYPOS, TERM) \
-combo_##NAME { \
-    timeout-ms = <TERM>; \
-    bindings = <BINDINGS>; \
-    key-positions = <KEYPOS>; \
-    layers = <DEF>; \
-};
+// #define ANACHRON_COMBO(NAME, BINDINGS, KEYPOS, TERM) \
+// combo_##NAME { \
+//     timeout-ms = <TERM>; \
+//     bindings = <BINDINGS>; \
+//     key-positions = <KEYPOS>; \
+//     layers = <DEF>; \ // Removes require prior idle and makes it avaliable only from DEF
+// };
 
-ANACHRON_COMBO(circumflex, &kp CARET, RIT LM1, COMBO_TIMEOUT) // ^
-ANACHRON_COMBO(grave,      &kp GRAVE, RIT LM2, COMBO_TIMEOUT) // `
-ANACHRON_COMBO(tilde,      &kp TILDE, RIT LM3, COMBO_TIMEOUT) // ~
+// ANACHRON_COMBO(circumflex, &kp CARET, RIT LM1, COMBO_TIMEOUT) // ^
+// ANACHRON_COMBO(grave,      &kp GRAVE, RIT LM2, COMBO_TIMEOUT) // `
+// ANACHRON_COMBO(tilde,      &kp TILDE, RIT LM3, COMBO_TIMEOUT) // ~
