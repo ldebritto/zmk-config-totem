@@ -55,10 +55,10 @@
                 
         DEF {
             bindings = <
-        &kp Q          &kp W        &kp E          &kp R        &kp T         &kp Y         &kp U         &kp I          &kp O         &kp P
-        &hrml LCTRL A  &hrml LALT S &shrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H  &hrmr RGUI J  &shrmr LSHFT K &hrmr RALT L  &hrmr RCTRL SQT
-&none   &hrml GLOBE Z  &kp X        &ltl NUM C     &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
-                                    &none          &lc NAV      &kp RSHFT     &kp SPC       &lc SYM       &none
+         &kp Q          &kp W        &kp E          &kp R        &kp T         &kp Y         &kp U         &kp I          &kp O         &kp P
+         &hrml LCTRL A  &hrml LALT S &shrml LSHFT D &hrml LGUI F &hrml HYPR G  &hrmr HYPR H  &hrmr RGUI J  &shrmr LSHFT K &hrmr RALT L  &hrmr RCTRL SQT
+&kp BSPC &hrml GLOBE Z  &kp X        &ltl NUM C     &ltl MOU V   &kp B         &kp N         &kp M         &kp COMMA      &kp DOT       &kp SEMI        &none
+                                     &lc NUM        &lc NAV      &kp RSHFT     &kp SPC       &lc SYM       &kp BSPC
             >;
         };
           
